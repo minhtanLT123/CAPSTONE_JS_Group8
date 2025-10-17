@@ -1,0 +1,49 @@
+//nesting css
+//_tênfile.scss: trình dịch scss sang css hiểu được đây là file partial css -> file này chỉ được import vào file khác, không cần biên dịch riêng lẻ
+.header {
+  background-color: $bg-primary-100;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    height: $height-5xl;
+    align-items: center;
+    .logo {
+      font-size: $font-3xl;
+      a {
+        text-decoration: none;
+        color: $text-primary-300;
+        font-weight: $fw-bold;
+      }
+    }
+    .menu {
+      a {
+        font-size: $font-xl;
+        font-weight: $fw-normal;
+        text-decoration: none;
+        margin: 0 $m-2;
+        color: $text-dark;
+        position: relative;
+
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: $bg-primary-300;
+          transform: scale(0, 0);
+        }
+
+        &:hover {
+          color: $text-primary-300;
+          transition: all 0.5s;
+          &:after {
+            transform: scale(1, 1);
+            transition: all 0.5s;
+          }
+        }
+      }
+    }
+  }
+}

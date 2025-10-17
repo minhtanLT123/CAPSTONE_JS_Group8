@@ -1,0 +1,62 @@
+.products {
+  .title {
+    @include mText($font-3xl, $text-dark, $fw-semi);
+    text-align: center;
+  }
+
+  .products__content {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+
+    .products__item {
+      .card {
+        background-color: transparent;
+        padding: 3rem;
+        @include box-shadow();
+
+        img {
+          width: 100%;
+          @include box-shadow();
+        }
+
+        .card__body {
+          .card__body-top {
+            .info {
+              h2 {
+                @include mText($font-2xl, $text-dark, $fw-semi);
+              }
+              p {
+                @include mText($font-xl, $text-dark, $fw-light);
+                margin-top: 0.5rem;
+              }
+            }
+            .price {
+              h2 {
+                @include mText($font-2xl, $text-dark, $fw-semi);
+              }
+            }
+          }
+
+          .card__body-bottom {
+            margin-top: 1rem;
+            .rating i {
+              color: #f9d412;
+            }
+            .buy button {
+              padding: 0.5rem 1rem;
+              border: none;
+              box-shadow: 6px 6px 4px #e2ebfc, -6px -6px 4px #fff;
+              background-color: #f5f9fe;
+              color: $primary-300;
+              font-size: 14px;
+              font-weight: $fw-light;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}

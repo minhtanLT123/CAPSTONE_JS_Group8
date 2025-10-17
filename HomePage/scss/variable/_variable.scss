@@ -1,0 +1,124 @@
+//màu sắc web
+$primary-300: #2a73dd;
+$primary-200: #2196f3;
+$primary-100: #f8f9fa;
+$dark: #000;
+$light: #fff;
+
+//màu chữ
+$text-primary-300: $primary-300;
+$text-primary-200: $primary-200;
+$text-primary-100: $primary-100;
+$text-dark: $dark;
+$text-light: $light;
+
+//màu background
+$bg-primary-300: $primary-300;
+$bg-primary-200: $primary-200;
+$bg-primary-100: $primary-100;
+$bg-dark: $dark;
+$bg-light: $light;
+
+//sizing (font-size)
+$font-base: 16px;
+$font-xl: 18px;
+$font-2xl: 20px;
+$font-3xl: 30px;
+$font-4xl: 40px;
+$font-5xl: 50px;
+$font-6xl: 60px;
+$font-7xl: 70px;
+
+//height
+$height-xl: 40px;
+$height-2xl: 50px;
+$height-3xl: 60px;
+$height-4xl: 70px;
+$height-5xl: 80px;
+$height-6xl: 90px;
+
+//weight
+$fw-light: 300;
+$fw-normal: 400;
+$fw-semi: 600;
+$fw-bold: 700;
+$fw-extra: 800;
+
+//margins & paddings
+$m-1: 0.25rem;
+$m-2: 0.5rem;
+$m-3: 0.75rem;
+$m-4: 1rem;
+$m-5: 1.25rem;
+$m-6: 1.5rem;
+$m-7: 1.75rem;
+$m-8: 2rem;
+$m-9: 2.25rem;
+$m-10: 2.5rem;
+
+$p-1: 0.25rem;
+$p-2: 0.5rem;
+$p-3: 0.75rem;
+$p-4: 1rem;
+$p-5: 1.25rem;
+$p-6: 1.5rem;
+$p-7: 1.75rem;
+$p-8: 2rem;
+$p-9: 2.25rem;
+$p-10: 2.5rem;
+
+//hàm xử lý @mixin: tương tự như hàm của js nhưng không có return
+@mixin mText($fs: $font-base, $c: $text-dark, $fw: $fw-normal) {
+  //default param
+  font-size: $fs;
+  color: $c;
+  font-weight: $fw;
+}
+
+@mixin mButton($fs, $c, $fw, $bg, $pd, $bd, $br, $c-hover, $bg-hover) {
+  @include mText($fs, $c, $fw);
+  background: $bg;
+  padding: $pd;
+  border: $bd;
+  border-radius: $br;
+  transition: all 0.5s;
+  &:hover {
+    color: $c-hover;
+    background: $bg-hover;
+  }
+}
+
+//tạo ra các class margin & padding
+$list-size: 0rem, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 1.5rem, 1.75rem, 2rem,
+  2.25rem, 2.5rem, 2.75rem, 3rem;
+
+//vòng lặp each
+$i: 0;
+@each $size in $list-size {
+  .mt-#{$i} {
+    margin-top: $size;
+  }
+  .mb-#{$i} {
+    margin-bottom: $size;
+  }
+  .ml-#{$i} {
+    margin-left: $size;
+  }
+  .mr-#{$i} {
+    margin-right: $size;
+  }
+  .mx-#{$i} {
+    margin-left: $size;
+    margin-right: $size;
+  }
+  .my-#{$i} {
+    margin-top: $size;
+    margin-bottom: $size;
+  }
+  $i: $i + 1;
+}
+
+@mixin box-shadow() {
+  box-shadow: 6px 6px 12px #e2ebfc, -6px -6px 12px #fff;
+  border-radius: 1rem;
+}
