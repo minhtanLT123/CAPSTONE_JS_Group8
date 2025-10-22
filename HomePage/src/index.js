@@ -6,7 +6,7 @@ const getListProducts = () => {
    *  - reject: Thất hứa
    */
   const promise = axios({
-    url: "https://68e90f1df2707e6128cd5d01.mockapi.io/apo/Products",
+    url: "https://68f8f2a2deff18f212b82977.mockapi.io/VegeData",
     method: "GET",
   });
 
