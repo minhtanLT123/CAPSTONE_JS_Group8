@@ -40,7 +40,7 @@ const renderProducts = (data) => {
     contentHTML += `
         <div class="products__item">
             <div class="card">
-              <img src="./img/${product.image}" />
+              <img src="./img/danhmuc/${product.type}/${product.image}" />
               <div class="card__body mt-5">
                 <div class="card__body-top justify-between">
                   <div class="info">
@@ -48,7 +48,7 @@ const renderProducts = (data) => {
                     <p>${product.description}</p>
                   </div>
                   <div class="price">
-                    <h2>$${product.price}</h2>
+                    <h2>${product.price} vnd</h2>
                   </div>
                 </div>
                 <div class="card__body-bottom justify-between">

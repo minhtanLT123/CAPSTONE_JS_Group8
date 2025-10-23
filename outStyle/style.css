@@ -1,0 +1,14 @@
+.image,
+.link a {
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5rem;
+    font-size: 5rem;
+
+}
+
+body .link a {
+
+    text-decoration: none;
+}
