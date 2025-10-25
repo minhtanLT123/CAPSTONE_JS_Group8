@@ -21,16 +21,22 @@ const getListProducts = () => {
 
 getListProducts();
 
-
+// render rating
 const renderRating = (rating) => {
   let contentRating = "";
   for (let i = 1; i <= rating; i++) {
     contentRating += `
-            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-leaf"></i>
         `;
   }
-
   return contentRating;
+};
+// format VND
+const formatVnd = (price) => {
+  return new Intl.NumberFormat('vi-VN', {
+    style: 'currency',
+    currency: 'VND',
+  }).format(price);
 };
 
 const renderProducts = (data) => {
@@ -42,20 +48,25 @@ const renderProducts = (data) => {
             <div class="card">
               <img src="./img/danhmuc/${product.type}/${product.image}" />
               <div class="card__body mt-5">
-                <div class="card__body-top justify-between">
+                <div class="card__body-top ">
                   <div class="info">
                     <h2>${product.name}</h2>
-                    <p>${product.description}</p>
+                   <div class="rating mt-3">${renderRating(product.rating)}</div>
                   </div>
-                  <div class="price">
-                    <h2>${product.price} vnd</h2>
+                   
+                  
+                  <div class="price mt-10 justify-between">
+                    <h2>${formatVnd(product.price * 0.8)}</h2>
+                    <h2>${formatVnd(product.price)}</h2>
+                   
+                   
                   </div>
                 </div>
                 <div class="card__body-bottom justify-between">
-                  <div class="rating">${renderRating(product.rating)}</div>
+                 
                   <div class="buy">
                     <button>
-                      <i class="fa-solid fa-cart-shopping"> </i>Buy now
+                      <i class="fa-solid fa-cart-shopping"> </i>Đi chợ
                     </button>
                   </div>
                 </div>

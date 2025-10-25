@@ -1,14 +1,19 @@
-.image,
-.link a {
+.image {
     background-color: antiquewhite;
     display: flex;
     justify-content: space-around;
-    margin-top: 5rem;
-    font-size: 5rem;
+    margin-top: 2rem;
+    font-size: 2rem;
 
 }
 
-body .link a {
+body .link {
+    font-size: 3rem;
+    align-items: center;
 
+    justify-items: center;
+    display: flex;
+    flex-direction: column;
     text-decoration: none;
+    width: 35rem;
 }

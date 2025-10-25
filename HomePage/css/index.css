@@ -466,17 +466,21 @@ a.active:after {
   text-align: center;
 }
 .products .typesanpham {
+  display: flex;
   align-items: center;
   justify-content: center;
-  display: flex;
   margin-top: 3rem;
   gap: 3rem;
   margin-bottom: 3rem;
 }
-.products .typesanpham img {
+.products .typesanpham .sanphamicon {
+  display: flex;
+  flex-direction: column;
+}
+.products .typesanpham .sanphamicon img {
   justify-content: center;
 }
-.products .typesanpham button {
+.products .typesanpham .sanphamicon button {
   justify-content: center;
 }
 .products .products__content {
@@ -507,6 +511,9 @@ a.active:after {
   font-weight: 300;
   margin-top: 0.5rem;
 }
+.products .products__content .products__item .card .card__body .card__body-top .info .rating i {
+  color: #21f912;
+}
 .products .products__content .products__item .card .card__body .card__body-top .price h2 {
   font-size: 20px;
   color: #000;
@@ -515,14 +522,11 @@ a.active:after {
 .products .products__content .products__item .card .card__body .card__body-bottom {
   margin-top: 1rem;
 }
-.products .products__content .products__item .card .card__body .card__body-bottom .rating i {
-  color: #f9d412;
-}
 .products .products__content .products__item .card .card__body .card__body-bottom .buy button {
   padding: 0.5rem 1rem;
   border: none;
   box-shadow: 6px 6px 4px #e2ebfc, -6px -6px 4px #fff;
-  background-color: #f5f9fe;
+  background-color: #f5fef6;
   color: #2a73dd;
   font-size: 14px;
   font-weight: 300;

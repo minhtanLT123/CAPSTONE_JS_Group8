@@ -5,19 +5,25 @@
   }
 
   .typesanpham {
+    display: flex;
     align-items: center;
     justify-content: center;
-    display: flex;
+
     margin-top: 3rem;
     gap: 3rem;
     margin-bottom: 3rem;
 
-    img {
-      justify-content: center;
-    }
+    .sanphamicon {
+      display: flex;
+      flex-direction: column;
 
-    button {
-      justify-content: center;
+      img {
+        justify-content: center;
+      }
+
+      button {
+        justify-content: center;
+      }
     }
   }
 
@@ -49,6 +55,10 @@
                 @include mText($font-xl, $text-dark, $fw-light);
                 margin-top: 0.5rem;
               }
+
+              .rating i {
+                color: #21f912;
+              }
             }
 
             .price {
@@ -61,15 +71,11 @@
           .card__body-bottom {
             margin-top: 1rem;
 
-            .rating i {
-              color: #f9d412;
-            }
-
             .buy button {
               padding: 0.5rem 1rem;
               border: none;
               box-shadow: 6px 6px 4px #e2ebfc, -6px -6px 4px #fff;
-              background-color: #f5f9fe;
+              background-color: #f5fef6;
               color: $primary-300;
               font-size: 14px;
               font-weight: $fw-light;
