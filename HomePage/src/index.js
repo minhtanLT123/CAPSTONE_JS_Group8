@@ -54,11 +54,9 @@ const renderProducts = (data) => {
                    <div class="rating mt-3">${renderRating(product.rating)}</div>
                   </div>
                    
-                  
                   <div class="price mt-10 justify-between">
-                    <h2>${formatVnd(product.price * 0.8)}</h2>
+                    <h2>${formatVnd(product.price * (1 - product.discount / 100))}</h2>
                     <h2>${formatVnd(product.price)}</h2>
-                   
                    
                   </div>
                 </div>
@@ -66,7 +64,7 @@ const renderProducts = (data) => {
                  
                   <div class="buy">
                     <button>
-                      <i class="fa-solid fa-cart-shopping"> </i>Đi chợ
+                      <i class="fa-solid fa-cart-shopping"> </i>Thêm vào giỏ hàng
                     </button>
                   </div>
                 </div>

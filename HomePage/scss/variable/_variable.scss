@@ -1,7 +1,10 @@
 //màu sắc web
-$primary-300: #2a73dd;
-$primary-200: #2196f3;
+$primary-300: #679210;
+$primary-200: #009900;
+$primary-150 :#76a713;
 $primary-100: #f8f9fa;
+
+
 $dark: #000;
 $light: #fff;
 
@@ -30,12 +33,27 @@ $font-6xl: 60px;
 $font-7xl: 70px;
 
 //height
+$height-sm: 10px;
+$height-md: 20px;
+$height-lg: 30px;
 $height-xl: 40px;
 $height-2xl: 50px;
 $height-3xl: 60px;
 $height-4xl: 70px;
 $height-5xl: 80px;
 $height-6xl: 90px;
+
+//width
+$width-sm: 10px;
+$width-md: 20px;
+$width-lg: 30px;
+$width-xl: 40px;
+$width-2xl: 50px;
+$width-3xl: 60px;
+$width-4xl: 70px;
+$width-5xl: 80px;
+$width-6xl: 200px;
+
 
 //weight
 $fw-light: 300;
@@ -82,6 +100,7 @@ $p-10: 2.5rem;
   border: $bd;
   border-radius: $br;
   transition: all 0.5s;
+
   &:hover {
     color: $c-hover;
     background: $bg-hover;
@@ -94,27 +113,34 @@ $list-size: 0rem, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 1.5rem, 1.75rem, 2rem
 
 //vòng lặp each
 $i: 0;
+
 @each $size in $list-size {
   .mt-#{$i} {
     margin-top: $size;
   }
+
   .mb-#{$i} {
     margin-bottom: $size;
   }
+
   .ml-#{$i} {
     margin-left: $size;
   }
+
   .mr-#{$i} {
     margin-right: $size;
   }
+
   .mx-#{$i} {
     margin-left: $size;
     margin-right: $size;
   }
+
   .my-#{$i} {
     margin-top: $size;
     margin-bottom: $size;
   }
+
   $i: $i + 1;
 }
 

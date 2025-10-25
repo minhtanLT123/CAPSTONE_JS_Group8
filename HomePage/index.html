@@ -16,66 +16,106 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
   <!-- css -->
   <link rel="stylesheet" href="../HomePage/css/index.css" />
 </head>
 
 <body>
 
+
   <header class="header">
-    <div class="container">
-      <div class="logo">
-        <a href="">NÔNG SẢN RAU SẠCH</a>
+    <div class="page-wrapper">
+      <div class="container">
+        <div class="header_content">
+          <div class="header_top">
+            <div class="logo">
+              <div>
+                <img src="./img/logo/logo.webp" alt="">
+              </div>
+              <div class="searchItem">
+                <input type="text">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+            </div>
+            <div class="shopping_cart">
+              <div class="contact">
+                <i class="fa-solid fa-phone"></i>
+                <span>Hotline +84 80808080</span>
+              </div>
+              <div>
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div>
+                <i class="fa-solid fa-map-location-dot"></i>
+              </div>
+              <div>
+                <i class="fa-regular fa-heart"></i>
+              </div>
+              <div>
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+          </div>
+
+          <nav class="menu">
+            <a href="#">Trang chủ</a>
+            <a href="#">Sản phẩm</a>
+            <a href="#">Sản phẩm khuyến mãi</a>
+            <a href="#">Tin tức</a>
+            <a href="#">Giới thiệu</a>
+            <a href="#">Liên hệ</a>
+            <a href="#">Đặt hàng nhanh</a>
+            <a href="#">Chính sách thành viên</a>
+          </nav>
+        </div>
       </div>
-      <nav class="menu">
-        <a class="active" href="#">TRANG CHỦ</a>
-        <a href="#">GIỚI THIỆU</a>
-        <a href="#">CỬA HÀNG</a>
-        <a href="#">TIN TỨC</a>
-        <a href="#">LIÊN HỆ</a>
-      </nav>
     </div>
   </header>
 
   <section class="carousel">
-    <div class="container">
-
+    <div class="page-wrapper">
+      <img src=" ./img/carousel/slider_1.webp">
+    </div>
   </section>
 
   <main class="products mt-12">
+    <div class="page-wrapper">
+      <div class="container">
+        <div class="typesanpham">
+          <div class="sanphamicon">
+            <img src="/HomePage/img/danhmuc/danhmucicon/danhmuc_1.webp" alt="">
+            <button>Rau củ</button>
+          </div>
+          <div class="sanphamicon">
+            <img src="/HomePage/img/danhmuc/danhmucicon/danhmuc_2.webp" alt="">
+            <button>Trái cây</button>
+          </div>
+          <div class="sanphamicon">
+            <img src="/HomePage/img/danhmuc/danhmucicon/danhmuc_3.webp" alt="">
+            <button>Đồ khô</button>
+          </div>
+          <div class="sanphamicon">
+            <img src="/HomePage/img/danhmuc/danhmucicon/danhmuc_4.webp" alt="">
+            <button>Nước ép</button>
+          </div>
+          <div class="sanphamicon">
+            <img src="/HomePage/img/danhmuc/danhmucicon/danhmuc_5.webp" alt="">
+            <button>Xà lách</button>
+          </div>
+          <div class="sanphamicon">
+            <img src="/HomePage/img/danhmuc/danhmucicon/danhmuc_6.webp" alt="">
+            <button>khác</button>
+          </div>
+        </div>
+        <!-- <h1 class="title">sản phẩm</h1> -->
 
-    <div class="container">
-      <div class="typesanpham">
-        <div class="sanphamicon">
-          <img src="/HomePage/img/danhmuc/danhmucicon/danhmuc_1.webp" alt="">
-          <button>Rau củ</button>
-        </div>
-        <div class="sanphamicon">
-          <img src="/HomePage/img/danhmuc/danhmucicon/danhmuc_2.webp" alt="">
-          <button>Trái cây</button>
-        </div>
-        <div class="sanphamicon">
-          <img src="/HomePage/img/danhmuc/danhmucicon/danhmuc_3.webp" alt="">
-          <button>Đồ khô</button>
-        </div>
-        <div class="sanphamicon">
-          <img src="/HomePage/img/danhmuc/danhmucicon/danhmuc_4.webp" alt="">
-          <button>Nước ép</button>
-        </div>
-        <div class="sanphamicon">
-          <img src="/HomePage/img/danhmuc/danhmucicon/danhmuc_5.webp" alt="">
-          <button>Xà lách</button>
-        </div>
-        <div class="sanphamicon">
-          <img src="/HomePage/img/danhmuc/danhmucicon/danhmuc_6.webp" alt="">
-          <button>khác</button>
-        </div>
+        <div class="products__content" id="listProduct"></div>
       </div>
-      <!-- <h1 class="title">sản phẩm</h1> -->
-
-      <div class="products__content" id="listProduct"></div>
     </div>
   </main>
+
   <footer class="footer"></footer>
   <br>
   <br>
@@ -94,6 +134,7 @@
   <br>
   <br>
   <br>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.11.0/axios.min.js"
     integrity="sha512-h9644v03pHqrIHThkvXhB2PJ8zf5E9IyVnrSfZg8Yj8k4RsO4zldcQc4Bi9iVLUCCsqNY0b4WXVV4UB+wbWENA=="

@@ -2,9 +2,27 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "roboto", sans-serif;
+
 }
 
+
 body {
-  background-color: #f5f9fe;
+  font-family: "Poppins", sans-serif;
+  color: $text-dark;
+}
+
+.page-wrapper {
+  width: 100%;
+  max-width: 1400px; // kích thước tổng thể trang
+  margin: 0 auto; // căn giữa toàn màn hình
+  padding: 0 1rem; // đệm hai bên
+  position: relative;
+
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }

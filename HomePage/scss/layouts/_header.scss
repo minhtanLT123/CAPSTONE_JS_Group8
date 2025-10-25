@@ -1,46 +1,137 @@
 //nesting css
 //_tênfile.scss: trình dịch scss sang css hiểu được đây là file partial css -> file này chỉ được import vào file khác, không cần biên dịch riêng lẻ
 .header {
-  background-color: $bg-primary-100;
-  .container {
-    display: flex;
-    justify-content: space-between;
-    height: $height-5xl;
-    align-items: center;
-    .logo {
-      font-size: $font-3xl;
-      a {
-        text-decoration: none;
-        color: $text-primary-300;
-        font-weight: $fw-bold;
-      }
-    }
-    .menu {
-      a {
-        font-size: $font-xl;
-        font-weight: $fw-normal;
-        text-decoration: none;
-        margin: 0 $m-2;
-        color: $text-dark;
-        position: relative;
 
-        &:after {
-          content: "";
-          position: absolute;
-          bottom: -5px;
-          left: 0;
-          width: 100%;
-          height: 3px;
-          background-color: $bg-primary-300;
-          transform: scale(0, 0);
+  .container {
+
+
+
+    height: auto;
+    align-items: center;
+
+    .header_content {
+      .header_top {
+        margin-top: $m-2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+
+        .logo {
+          display: flex;
+          align-items: center;
+          gap: $m-3;
+
+          img {
+
+            height: $height-2xl;
+
+          }
+
+          .searchItem {
+            display: flex;
+            align-items: center;
+            margin-left: $m-3;
+            border: 1px solid #333;
+            border-radius: 8px;
+            width: 500px;
+            height: $height-2xl;
+            overflow: hidden;
+
+
+            input {
+              width: 90%;
+              border: none;
+              margin: 0 $m-2;
+              font-size: $font-base;
+              outline: none;
+
+
+            }
+
+            i {
+              width: $width-xl;
+              height: $height-xl;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 0.5rem 1rem;
+              background-color: $primary-150;
+              color: $text-light;
+              cursor: pointer;
+              border-radius: 8px;
+              margin-left: -$m-3;
+            }
+
+          }
+
         }
 
-        &:hover {
-          color: $text-primary-300;
-          transition: all 0.5s;
-          &:after {
-            transform: scale(1, 1);
-            transition: all 0.5s;
+        .shopping_cart {
+          display: flex;
+
+
+          .contact {
+            border: 2px solid $primary-150;
+            border-radius: 8px;
+            margin: 0 $m-2;
+            width: $width-6xl;
+            height: $height-xl;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+          }
+
+          div {
+            display: flex;
+            background-color: $primary-150;
+            border: 2px solid $primary-150;
+            border-radius: 8px;
+            margin: 0 $m-2;
+            width: $width-xl;
+            height: $height-xl;
+            align-items: center;
+            justify-content: center;
+            color: $text-light;
+
+          }
+
+        }
+      }
+
+      .menu {
+        display: flex;
+        margin-top: $m-5;
+        background-color: $primary-300;
+        border-radius: 8px;
+        align-items: center;
+        justify-content: flex-start;
+
+
+
+
+        a {
+          padding: $m-2 $m-2;
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          height: $height-2xl;
+          font-size: $font-xl;
+          font-weight: $fw-normal;
+          text-decoration: none;
+          margin: 0 $m-4;
+          color: $text-light;
+          transition: background-color 0.3s ease, transform 0.3s ease;
+
+
+          &:hover {
+            background-color: $primary-150;
+            transform: scale(1.05);
+            border-radius: 8px;
+
+
           }
         }
       }

@@ -1,18 +1,26 @@
 .carousel {
+  position: relative;
+  width: calc(100% + 200px);
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  margin-top: 2rem;
 
-  .container {
+  img {
     width: 100%;
+    height: auto;
     aspect-ratio: 16/6;
-    background: url("/HomePage/img/slider/slider_1.webp");
-    background-size: cover;
-    background-position: bottom right;
-    position: relative;
-    z-index: 2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    padding: 0 5%;
+    object-fit: cover;
+    display: block;
+  }
 
+  @media (max-width: 992px) {
+    width: 100%;
+    left: 0;
+    transform: none;
+
+    img {
+      aspect-ratio: 16/8;
+    }
   }
 }
