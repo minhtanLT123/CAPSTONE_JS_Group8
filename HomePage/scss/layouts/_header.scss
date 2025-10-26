@@ -1,21 +1,15 @@
-//nesting css
-//_tênfile.scss: trình dịch scss sang css hiểu được đây là file partial css -> file này chỉ được import vào file khác, không cần biên dịch riêng lẻ
 .header {
-
   .container {
-
-
-
     height: auto;
     align-items: center;
 
     .header_content {
       .header_top {
+        z-index: 40;
         margin-top: $m-2;
         display: flex;
         align-items: center;
         justify-content: space-between;
-
 
         .logo {
           display: flex;
@@ -23,9 +17,7 @@
           gap: $m-3;
 
           img {
-
             height: $height-2xl;
-
           }
 
           .searchItem {
@@ -38,15 +30,12 @@
             height: $height-2xl;
             overflow: hidden;
 
-
             input {
               width: 90%;
               border: none;
               margin: 0 $m-2;
               font-size: $font-base;
               outline: none;
-
-
             }
 
             i {
@@ -62,17 +51,14 @@
               border-radius: 8px;
               margin-left: -$m-3;
             }
-
           }
-
         }
 
         .shopping_cart {
           display: flex;
 
-
           .contact {
-            border: 2px solid $primary-150;
+            border: 2px solid;
             border-radius: 8px;
             margin: 0 $m-2;
             width: $width-6xl;
@@ -81,12 +67,16 @@
             align-items: center;
             justify-content: center;
             font-size: 14px;
+
+            p {
+              margin-left: $m-2;
+            }
           }
 
           div {
             display: flex;
-            background-color: $primary-150;
-            border: 2px solid $primary-150;
+            background-color: $primary-300;
+            border: 2px solid;
             border-radius: 8px;
             margin: 0 $m-2;
             width: $width-xl;
@@ -95,43 +85,109 @@
             justify-content: center;
             color: $text-light;
 
+            i {
+              cursor: pointer;
+            }
+
+            &:hover {
+              background-color: $primary-150;
+              border-radius: 8px;
+            }
+
           }
 
         }
       }
 
-      .menu {
-        display: flex;
-        margin-top: $m-5;
-        background-color: $primary-300;
-        border-radius: 8px;
-        align-items: center;
-        justify-content: flex-start;
+      .header_menu {
+        position: relative;
 
-
-
-
-        a {
-          padding: $m-2 $m-2;
-          border-radius: 8px;
+        ul {
           display: flex;
+          margin-top: $m-5;
+          background-color: $primary-300;
+          border-radius: 8px;
           align-items: center;
           justify-content: flex-start;
-          height: $height-2xl;
-          font-size: $font-xl;
-          font-weight: $fw-normal;
-          text-decoration: none;
-          margin: 0 $m-4;
-          color: $text-light;
-          transition: background-color 0.3s ease, transform 0.3s ease;
 
+          li {
+            position: relative;
+            list-style: none;
 
-          &:hover {
-            background-color: $primary-150;
-            transform: scale(1.05);
-            border-radius: 8px;
+            a,
+            button,
+            .spTitle {
+              color: $text-light;
+              text-decoration: none;
+              font-size: $font-xl;
+              font-weight: $fw-xnormal;
+              padding: $m-2 $m-2;
+              margin: 0 $m-4;
+              border-radius: 8px;
+              display: flex;
+              align-items: center;
+              gap: 6px;
+              height: $height-2xl;
+              transition: background-color 0.3s ease;
+              background: none;
+              border: none;
+              cursor: pointer;
 
+              &:hover {
+                background-color: $primary-150;
+              }
+            }
 
+            // ==========================
+            // Mega menu dropdown
+            // ==========================
+            &.spContent {
+              position: static;
+
+              .spTitle {
+                display: flex;
+                align-items: center;
+
+                i {
+                  margin: 0;
+                  padding: 0;
+                }
+              }
+
+              .dropdownMenu {
+                z-index: 50;
+                position: absolute;
+                top: 100%; // nằm ngay dưới li
+                left: 0;
+                width: 100%; // toàn chiều rộng màn hình (giống kiểu mega menu lớn)
+                background: #fff;
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                gap: $m-3;
+                padding: $m-4;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(10px);
+                transition: all 0.3s ease;
+
+                div {
+                  font-size: $font-base;
+                  color: #333;
+                  line-height: 1.5;
+                }
+              }
+
+              &:hover {
+                .dropdownMenu {
+                  opacity: 1;
+                  visibility: visible;
+                  transform: translateY(0);
+                }
+              }
+            }
           }
         }
       }

@@ -11,19 +11,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet" />
-
+  <!-- tailwindcss -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <!-- font-awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+  <!-- flowbite -->
   <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
   <!-- css -->
   <link rel="stylesheet" href="../HomePage/css/index.css" />
 </head>
 
 <body>
-
 
   <header class="header">
     <div class="page-wrapper">
@@ -42,7 +42,7 @@
             <div class="shopping_cart">
               <div class="contact">
                 <i class="fa-solid fa-phone"></i>
-                <span>Hotline +84 80808080</span>
+                <p>Hotline +84 80808080</p>
               </div>
               <div>
                 <i class="fa-solid fa-user"></i>
@@ -58,17 +58,33 @@
               </div>
             </div>
           </div>
-
-          <nav class="menu">
-            <a href="#">Trang chủ</a>
-            <a href="#">Sản phẩm</a>
-            <a href="#">Sản phẩm khuyến mãi</a>
-            <a href="#">Tin tức</a>
-            <a href="#">Giới thiệu</a>
-            <a href="#">Liên hệ</a>
-            <a href="#">Đặt hàng nhanh</a>
-            <a href="#">Chính sách thành viên</a>
-          </nav>
+          <div class="header_menu ">
+            <ul>
+              <li>
+                <a href="#" class="trangchu">Trang chủ</a>
+              </li>
+              <li class="spContent ">
+                <div class="spTitle">
+                  <button>Sản phẩm</button>
+                  <i class="fa-solid fa-caret-down"></i>
+                </div>
+                <div class="dropdownMenu">
+                  <div>Danh mục 1</div>
+                  <div>Danh mục 2</div>
+                  <div>Danh mục 3</div>
+                  <div>Danh mục 4</div>
+                  <div>Danh mục 5</div>
+                </div>
+              </li>
+              <li><a href="#" class="sanphamKM">Sản phẩm khuyến mãi</a>
+              </li>
+              <li><a href="#" class="tintuc">Tin tức</a></li>
+              <li><a href="#" class="gioithieu">Giới thiệu</a></li>
+              <li><a href="#" class="lienhe">Liên hệ</a></li>
+              <li><a href="#" class="dathang">Đặt hàng nhanh</a></li>
+              <li><a href="#" class="chinhsach">Chính sách thành viên</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
