@@ -1,5 +1,6 @@
 .carousel {
   z-index: 10;
+
   position: relative;
   width: calc(100% + 200px);
   left: 50%;
@@ -24,4 +25,5 @@
       aspect-ratio: 16/8;
     }
   }
+
 }

@@ -366,25 +366,25 @@ body {
   position: relative;
   z-index: 100;
 }
-.header .container {
+.header .page-wrapper .container {
   height: auto;
   align-items: center;
 }
-.header .container .header_content .header_top {
+.header .page-wrapper .container .header_content .header_top {
   margin-top: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.header .container .header_content .header_top .logo {
+.header .page-wrapper .container .header_content .header_top .logo {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
-.header .container .header_content .header_top .logo img {
+.header .page-wrapper .container .header_content .header_top .logo img {
   height: 50px;
 }
-.header .container .header_content .header_top .logo .searchItem {
+.header .page-wrapper .container .header_content .header_top .logo .searchItem {
   display: flex;
   align-items: center;
   margin-left: 0.75rem;
@@ -394,30 +394,30 @@ body {
   height: 50px;
   overflow: hidden;
 }
-.header .container .header_content .header_top .logo .searchItem input {
+.header .page-wrapper .container .header_content .header_top .logo .searchItem input {
   width: 90%;
   border: none;
   margin: 0 0.5rem;
   font-size: 16px;
   outline: none;
 }
-.header .container .header_content .header_top .logo .searchItem i {
+.header .page-wrapper .container .header_content .header_top .logo .searchItem i {
   width: 40px;
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.5rem;
   background-color: #76a713;
   color: #fff;
   cursor: pointer;
   border-radius: 8px;
   margin-left: -0.75rem;
 }
-.header .container .header_content .header_top .shopping_cart {
+.header .page-wrapper .container .header_content .header_top .shopping_cart {
   display: flex;
 }
-.header .container .header_content .header_top .shopping_cart .contact {
+.header .page-wrapper .container .header_content .header_top .shopping_cart .contact {
   border: 2px solid;
   border-radius: 8px;
   margin: 0 0.5rem;
@@ -426,12 +426,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 16px;
 }
-.header .container .header_content .header_top .shopping_cart .contact p {
+.header .page-wrapper .container .header_content .header_top .shopping_cart .contact p {
   margin-left: 0.5rem;
 }
-.header .container .header_content .header_top .shopping_cart div {
+.header .page-wrapper .container .header_content .header_top .shopping_cart div {
   display: flex;
   background-color: #679210;
   border: 2px solid;
@@ -443,17 +443,17 @@ body {
   justify-content: center;
   color: #fff;
 }
-.header .container .header_content .header_top .shopping_cart div i {
+.header .page-wrapper .container .header_content .header_top .shopping_cart div i {
   cursor: pointer;
 }
-.header .container .header_content .header_top .shopping_cart div:hover {
+.header .page-wrapper .container .header_content .header_top .shopping_cart div:hover {
   background-color: #76a713;
   border-radius: 8px;
 }
-.header .container .header_content .header_menu {
+.header .page-wrapper .container .header_content .header_menu {
   position: relative;
 }
-.header .container .header_content .header_menu .header_content {
+.header .page-wrapper .container .header_content .header_menu .header_content {
   display: flex;
   margin-top: 1.25rem;
   background-color: #679210;
@@ -461,13 +461,7 @@ body {
   align-items: center;
   justify-content: flex-start;
 }
-.header .container .header_content .header_menu .header_content li {
-  position: relative;
-  list-style: none;
-}
-.header .container .header_content .header_menu .header_content li a,
-.header .container .header_content .header_menu .header_content li button,
-.header .container .header_content .header_menu .header_content li .spTitle {
+.header .page-wrapper .container .header_content .header_menu .header_content .level-1 a {
   color: #fff;
   text-decoration: none;
   font-size: 18px;
@@ -477,39 +471,64 @@ body {
   border-radius: 8px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 0.5rem;
   height: 50px;
   transition: background-color 0.3s ease;
   background: none;
   border: none;
   cursor: pointer;
 }
-.header .container .header_content .header_menu .header_content li a:hover,
-.header .container .header_content .header_menu .header_content li button:hover,
-.header .container .header_content .header_menu .header_content li .spTitle:hover {
+.header .page-wrapper .container .header_content .header_menu .header_content .level-1 a:hover {
   background-color: #76a713;
 }
-.header .container .header_content .header_menu .header_content li.spContent {
+.header .page-wrapper .container .header_content .header_menu .header_content li {
+  position: relative;
+  list-style: none;
+}
+.header .page-wrapper .container .header_content .header_menu .header_content li button,
+.header .page-wrapper .container .header_content .header_menu .header_content li .spTitle {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 0.5rem 0.5rem;
+  margin: 0 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 50px;
+  transition: background-color 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.header .page-wrapper .container .header_content .header_menu .header_content li button:hover,
+.header .page-wrapper .container .header_content .header_menu .header_content li .spTitle:hover {
+  background-color: #76a713;
+}
+.header .page-wrapper .container .header_content .header_menu .header_content li.spContent {
   position: static;
 }
-.header .container .header_content .header_menu .header_content li.spContent .spTitle {
+.header .page-wrapper .container .header_content .header_menu .header_content li.spContent .spTitle {
   display: flex;
   align-items: center;
 }
-.header .container .header_content .header_menu .header_content li.spContent .spTitle i {
+.header .page-wrapper .container .header_content .header_menu .header_content li.spContent .spTitle button,
+.header .page-wrapper .container .header_content .header_menu .header_content li.spContent .spTitle a,
+.header .page-wrapper .container .header_content .header_menu .header_content li.spContent .spTitle i {
   margin: 0;
   padding: 0;
 }
-.header .container .header_content .header_menu .header_content li.spContent .dropdownMenu {
+.header .page-wrapper .container .header_content .header_menu .header_content li.spContent .dropdownMenu {
   z-index: 50;
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
   background: #fff;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0.75rem;
+  display: flex;
+  flex-direction: row;
   padding: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -518,12 +537,36 @@ body {
   transform: translateY(10px);
   transition: all 0.3s ease;
 }
-.header .container .header_content .header_menu .header_content li.spContent .dropdownMenu div {
+.header .page-wrapper .container .header_content .header_menu .header_content li.spContent .dropdownMenu .menu_child {
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
   font-size: 16px;
   color: #333;
   line-height: 1.5;
 }
-.header .container .header_content .header_menu .header_content li.spContent:hover .dropdownMenu {
+.header .page-wrapper .container .header_content .header_menu .header_content li.spContent .dropdownMenu .menu_child h2 {
+  color: #679210;
+}
+.header .page-wrapper .container .header_content .header_menu .header_content li.spContent .dropdownMenu .menu_child h2,
+.header .page-wrapper .container .header_content .header_menu .header_content li.spContent .dropdownMenu .menu_child ul li {
+  cursor: pointer;
+}
+.header .page-wrapper .container .header_content .header_menu .header_content li.spContent .dropdownMenu .image_salad {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .page-wrapper .container .header_content .header_menu .header_content li.spContent .dropdownMenu .image_salad img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.header .page-wrapper .container .header_content .header_menu .header_content li.spContent:hover .dropdownMenu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
