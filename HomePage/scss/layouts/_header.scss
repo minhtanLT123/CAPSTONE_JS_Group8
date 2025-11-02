@@ -54,6 +54,7 @@
                 cursor: pointer;
                 border-radius: 8px;
                 margin-left: -$m-3;
+
               }
             }
           }
@@ -99,6 +100,47 @@
               }
 
             }
+
+
+
+            .cart-icon {
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: $width-xl;
+              height: $height-xl;
+              background-color: $primary-300;
+              border: 2px solid;
+              border-radius: 8px;
+              margin: 0 $m-2;
+              color: $text-light;
+              cursor: pointer;
+
+              i {
+                font-size: $font-xl;
+              }
+
+              .cart-count {
+                position: absolute;
+                top: -6px;
+                right: -6px;
+                background-color: red;
+                color: white;
+                font-size: 12px;
+                font-weight: bold;
+                border-radius: 50%;
+                padding: 2px 6px;
+                line-height: 1;
+                min-width: 18px;
+                text-align: center;
+              }
+
+              &:hover {
+                background-color: $primary-150;
+              }
+            }
+
 
           }
         }
