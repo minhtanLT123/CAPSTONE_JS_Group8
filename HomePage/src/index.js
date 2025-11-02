@@ -1,3 +1,5 @@
+
+// import GioHang from "./gioHang";
 const getListProducts = () => {
   /**
    * axios trả về đối tượng promise (lời hứa)
@@ -39,7 +41,39 @@ const formatVnd = (price) => {
   }).format(price);
 };
 
+const onHandleAddShoppingCart = (id) => {
+
+  // Lấy danh sách giỏ hàng hiện có từ localStorage (nếu chưa có thì là mảng rỗng)
+  let arrGioHang = JSON.parse(localStorage.getItem("gioHang")) || [];
+
+  // Tìm sản phẩm theo id trong data đã render
+  const product = window.productList.find((p) => p.id === id);
+
+  if (!product) return;
+
+  // Kiểm tra xem sản phẩm đã có trong giỏ hàng chưa
+  const existingProduct = arrGioHang.find((item) => item.id === id);
+  if (existingProduct) {
+    existingProduct.quantity += 1; // Tăng số lượng
+  } else {
+    arrGioHang.push({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      quantity: 1,
+      image: product.image,
+    });
+  }
+
+  // Lưu lại giỏ hàng
+  localStorage.setItem("gioHang", JSON.stringify(arrGioHang));
+
+  alert(`Đã thêm "${product.name}" vào giỏ hàng!`);
+};
+window.onHandleAddShoppingCart = onHandleAddShoppingCart;
+
 const renderProducts = (data) => {
+  window.productList = data; // 👈 Thêm dòng này
   let contentHTML = "";
   for (let i = 0; i < data.length; i++) {
     const product = data[i];
@@ -63,8 +97,8 @@ const renderProducts = (data) => {
                 <div class="card__body-bottom justify-between">
                  
                   <div class="buy">
-                    <button>
-                      <i class="fa-solid fa-cart-shopping"> </i>Thêm vào giỏ hàng
+                    <button onclick = " onHandleAddShoppingCart('${product.id}')" >
+                      <i   class="fa-solid fa-cart-shopping"> </i>Thêm vào giỏ hàng
                     </button>
                   </div>
                 </div>
