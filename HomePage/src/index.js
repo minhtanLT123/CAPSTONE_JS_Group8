@@ -85,12 +85,16 @@ const renderProducts = (data) => {
                 <div class="card__body-top ">
                   <div class="info">
                     <h2>${product.name}</h2>
-                   <div class="rating mt-3">${renderRating(product.rating)}</div>
+                   <div 
+                   class="rating mt-3">
+                   <span>Yêu thích</span>
+                   ${renderRating(product.rating)}
+                   </div>
                   </div>
                    
                   <div class="price mt-10 justify-between">
-                    <h2>${formatVnd(product.price * (1 - product.discount / 100))}</h2>
-                    <h2>${formatVnd(product.price)}</h2>
+                    <h2 calss ="newPrice">${formatVnd(product.price * (1 - product.discount / 100))}</h2>
+                    <h2 class = "oldPrice" >${formatVnd(product.price)}</h2>
                    
                   </div>
                 </div>
