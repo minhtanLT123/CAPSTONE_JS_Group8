@@ -774,4 +774,49 @@ a.active:after {
 .products .products__content .products__item:hover {
   box-shadow: 0 0 10px #009900;
   border-radius: 8px;
+}
+
+.footer {
+  background-color: #efffcf;
+}
+.footer h1 {
+  color: #749d23;
+  text-transform: uppercase;
+}
+.footer .container {
+  display: flex;
+  justify-content: center;
+}
+.footer .container .thanhtoan {
+  padding: 1rem;
+  margin: 1rem;
+  width: 35%;
+}
+.footer .container .thanhtoan .thanhtoan_img {
+  display: flex;
+  width: 15%;
+}
+.footer .container .chinhsach {
+  padding: 1rem;
+  margin: 1rem;
+  width: 20%;
+}
+.footer .container .thongtin {
+  padding: 1rem;
+  margin: 1rem;
+  width: 20%;
+}
+.footer .container .thongtin .lienket_img {
+  display: flex;
+  width: 15%;
+}
+.footer .container .instagram {
+  padding: 1rem;
+  margin: 1rem;
+  width: 25%;
+}
+.footer .container .instagram .insta_img {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
 }/*# sourceMappingURL=index.css.map */

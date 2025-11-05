@@ -1,0 +1,59 @@
+.footer {
+    background-color: $primary-80;
+
+    h1 {
+        color: $primary-120;
+        text-transform: uppercase;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+
+
+        .thanhtoan {
+            padding: $m-4;
+            margin: $m-4;
+
+            width: 35%;
+
+            .thanhtoan_img {
+                display: flex;
+                width: 15%;
+            }
+        }
+
+        .chinhsach {
+            padding: $m-4;
+            margin: $m-4;
+
+            width: 20%;
+        }
+
+        .thongtin {
+            padding: $m-4;
+            margin: $m-4;
+
+            width: 20%;
+
+            .lienket_img {
+                display: flex;
+                width: 15%;
+            }
+        }
+
+        .instagram {
+            padding: $m-4;
+            margin: $m-4;
+
+            width: 25%;
+
+            .insta_img {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2px;
+            }
+
+        }
+    }
+}
