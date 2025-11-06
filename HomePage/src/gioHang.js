@@ -1,24 +1,4 @@
-const cartBtn = document.getElementById("cartButton");
-const panel = document.getElementById("cartPanel");
-const closeBtn = document.getElementById("closeCart");
-const cartItemsContainer = document.getElementById("cartItems");
-const cartTotal = document.getElementById("cartTotal");
 
-// Mở/đóng panel
-cartBtn.addEventListener("click", () => {
-  renderCart();
-  panel.classList.toggle("active");
-});
-
-closeBtn.addEventListener("click", () => {
-  panel.classList.remove("active");
-});
-
-document.addEventListener("click", (e) => {
-  if (!panel.contains(e.target) && !cartBtn.contains(e.target)) {
-    panel.classList.remove("active");
-  }
-});
 
 // Render sản phẩm trong giỏ
 const renderCart = () => {

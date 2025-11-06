@@ -301,15 +301,158 @@
   }
 }
 
-/* Hiệu ứng khi panel mở */
-#cartPanel {
-  &.active {
-    scale: 1; // bật lên
+.header {
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header_top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+
+      .searchItem {
+        width: 500px;
+      }
+    }
+
+    .shopping_cart {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+    }
+  }
+
+  .header_menu {
+    ul.header_content {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
   }
 }
 
-#cartOverlay {
-  &.active {
-    display: block;
+@media (min-width: 768px) and (max-width: 1023px) {
+  .header {
+    .container {
+      padding: 0 2rem;
+    }
+
+    .header_top {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .logo {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .searchItem {
+          width: 100%;
+          margin-top: 1rem;
+        }
+      }
+
+      .shopping_cart {
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+    }
+
+    .header_menu {
+      ul.header_content {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    .container {
+      padding: 0 1rem;
+    }
+
+    .header_top {
+      flex-direction: column;
+      align-items: stretch;
+
+      .logo {
+        flex-direction: column;
+        align-items: stretch;
+
+        .searchItem {
+          width: 100%;
+          margin-top: 1rem;
+        }
+      }
+
+      .shopping_cart {
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 1rem;
+
+        .contact,
+        .cart-icon {
+          width: 100%;
+          justify-content: flex-start;
+        }
+      }
+    }
+
+    .header_menu {
+      ul.header_content {
+        flex-direction: column;
+        gap: 0.5rem;
+
+        li.level-1,
+        .spContent {
+          width: 100%;
+          text-align: left;
+        }
+
+        .dropdownMenu {
+          flex-direction: column;
+
+          .menu_child {
+            grid-template-columns: repeat(2, 1fr);
+          }
+
+          .image_salad {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .header {
+    .menu-toggle {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .header_menu {
+      display: none; // Ẩn menu mặc định
+
+      &.active {
+        display: block; // Hiện menu khi có class active
+      }
+    }
   }
 }

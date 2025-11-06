@@ -39,39 +39,86 @@ const formatVnd = (price) => {
     currency: 'VND',
   }).format(price);
 };
+// --- LẤY GIỎ HÀNG TỪ LOCALSTORAGE ---
+const getCart = () => {
+  return JSON.parse(localStorage.getItem("gioHang")) || [];
+};
 
-const onHandleAddShoppingCart = (id) => {
+// --- LƯU GIỎ HÀNG ---
+const saveCart = (cart) => {
+  localStorage.setItem("gioHang", JSON.stringify(cart));
+};
+// --- RENDER GIỎ HÀNG PANEL ---
+const renderCart = () => {
+  const cart = getCart();
+  const cartItemsContainer = document.getElementById("cartItems");
+  cartItemsContainer.innerHTML = "";
 
-  // Lấy danh sách giỏ hàng hiện có từ localStorage (nếu chưa có thì là mảng rỗng)
-  let arrGioHang = JSON.parse(localStorage.getItem("gioHang")) || [];
-
-  // Tìm sản phẩm theo id trong data đã render
-  const product = window.productList.find((p) => p.id === id);
-
-  if (!product) return;
-
-  // Kiểm tra xem sản phẩm đã có trong giỏ hàng chưa
-  const existingProduct = arrGioHang.find((item) => item.id === id);
-  if (existingProduct) {
-    existingProduct.quantity += 1; // Tăng số lượng
-  } else {
-    arrGioHang.push({
-      id: product.id,
-      name: product.name,
-      price: product.price,
-      quantity: 1,
-      image: product.image,
-    });
+  if (cart.length === 0) {
+    cartItemsContainer.innerHTML = `<p class="text-center text-gray-500">Giỏ hàng trống</p>`;
+    return;
   }
 
-  // Lưu lại giỏ hàng
-  localStorage.setItem("gioHang", JSON.stringify(arrGioHang));
-  // updateCartCount();
+  cart.forEach(item => {
+    const totalPrice = item.price * item.quantity;
+    const div = document.createElement("div");
+    div.className = "cart-item flex items-center justify-between mb-4";
+    div.innerHTML = `
+      <img src="./img/danhmuc/${item.type || 'rau-cu'}/${item.image}" class="w-16 h-16 rounded-xl object-cover" />
+      <div class="flex-1 ml-4">
+        <h4 class="font-medium text-gray-700">${item.name}</h4>
+        <p class="text-sm text-gray-500">Số lượng: ${item.quantity}</p>
+      </div>
+      <div class="font-semibold text-blue-600">${formatVnd(totalPrice)}</div>
+    `;
+    cartItemsContainer.appendChild(div);
+  });
+};
+//--- THÊM SẢN PHẨM VÀO GIỎ HÀNG ---
+const onHandleAddShoppingCart = (id) => {
+  const product = window.productList.find(p => p.id === id);
+  if (!product) return;
 
+  let cart = getCart();
+  const existing = cart.find(item => item.id === id);
 
-  // alert(`Đã thêm "${product.name}" vào giỏ hàng!`);
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push({ ...product, quantity: 1 });
+  }
+
+  saveCart(cart);
+  renderCart();
+  openCartPanel();
 };
 window.onHandleAddShoppingCart = onHandleAddShoppingCart;
+
+// --- MỞ GIỎ HÀNG ---
+const openCartPanel = () => {
+  const panel = document.getElementById("cartPanel");
+  const overlay = document.getElementById("cartOverlay");
+
+  panel.classList.remove("scale-0");  // panel hiện
+  overlay.classList.remove("hidden"); // overlay hiện
+
+  overlay.addEventListener("click", closeCartPanel);
+};
+
+// --- ĐÓNG GIỎ HÀNG ---
+const closeCartPanel = () => {
+  const panel = document.getElementById("cartPanel");
+  const overlay = document.getElementById("cartOverlay");
+
+  panel.classList.add("scale-0");  // panel ẩn
+  overlay.classList.add("hidden"); // overlay ẩn
+};
+
+// --- NÚT ĐÓNG TRONG PANEL ---
+document.querySelectorAll("#cartPanel .close-btn").forEach(btn => {
+  btn.addEventListener("click", closeCartPanel);
+});
+
 
 const renderProducts = (data) => {
   window.productList = data; // 👈 Thêm dòng này
@@ -81,7 +128,9 @@ const renderProducts = (data) => {
     contentHTML += `
         <div class="products__item">
             <div class="card">
+              <div class = "img-container" >
               <img src="./img/danhmuc/${product.type}/${product.image}" />
+              </div>
               <div class="card__body mt-5">
                 <div class="card__body-top ">
                   <div class="info">
@@ -102,7 +151,7 @@ const renderProducts = (data) => {
                 <div class="card__body-bottom justify-between">
                  
                   <div class="buy">
-                    <button onclick = " onHandleAddShoppingCart('${product.id}')" >
+                    <button onclick = "onHandleAddShoppingCart('${product.id}')" >
                       <i   class="fa-solid fa-cart-shopping"> </i>Thêm vào giỏ hàng
                     </button>
                   </div>
@@ -112,37 +161,13 @@ const renderProducts = (data) => {
         </div>
     `;
   }
-  // updateCartCount();
+
   document.getElementById("listProduct").innerHTML = contentHTML;
 };
 
-// render Gio Hang
-const openPanelCart = () => {
-  const cartBtn = document.getElementById("cartButton");
-  const panel = document.getElementById("cartPanel");
-  const overlay = document.getElementById("cartOverlay");
+// --- INIT ---
+document.addEventListener("DOMContentLoaded", () => {
+  renderCart();
+});
 
-  const openCart = () => {
-    panel.classList.add("active");
-    overlay.classList.add("active");
-  };
-
-  const closeCart = () => {
-    panel.classList.remove("active");
-    overlay.classList.remove("active");
-  };
-
-  // Mở panel khi click vào icon giỏ hàng
-  cartBtn.addEventListener("click", openCart);
-
-  // Đóng panel khi click vào overlay
-  overlay.addEventListener("click", closeCart);
-
-  // Đóng khi click nút close
-  panel.querySelectorAll(".close-btn").forEach(btn => {
-    btn.addEventListener("click", closeCart);
-  });
-};
-
-document.addEventListener("DOMContentLoaded", openPanelCart);
 

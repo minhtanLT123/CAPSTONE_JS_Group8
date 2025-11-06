@@ -1,0 +1,20 @@
+.style_panel {
+
+
+    overflow: hidden;
+    z-index: 100;
+
+    /* Hiệu ứng khi panel mở */
+    #cartPanel {
+        &.active {
+            scale: 1; // bật lên
+        }
+    }
+
+    #cartOverlay {
+        &.active {
+            display: block;
+        }
+    }
+
+}
