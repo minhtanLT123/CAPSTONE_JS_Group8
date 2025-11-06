@@ -1,5 +1,4 @@
 
-// import GioHang from "./gioHang";
 const getListProducts = () => {
   /**
    * axios trả về đối tượng promise (lời hứa)
@@ -67,8 +66,10 @@ const onHandleAddShoppingCart = (id) => {
 
   // Lưu lại giỏ hàng
   localStorage.setItem("gioHang", JSON.stringify(arrGioHang));
+  // updateCartCount();
 
-  alert(`Đã thêm "${product.name}" vào giỏ hàng!`);
+
+  // alert(`Đã thêm "${product.name}" vào giỏ hàng!`);
 };
 window.onHandleAddShoppingCart = onHandleAddShoppingCart;
 
@@ -93,7 +94,7 @@ const renderProducts = (data) => {
                   </div>
                    
                   <div class="price mt-10 justify-between">
-                    <h2 calss ="newPrice">${formatVnd(product.price * (1 - product.discount / 100))}</h2>
+                    <h2 class ="newPrice">${formatVnd(product.price * (1 - product.discount / 100))}</h2>
                     <h2 class = "oldPrice" >${formatVnd(product.price)}</h2>
                    
                   </div>
@@ -111,6 +112,37 @@ const renderProducts = (data) => {
         </div>
     `;
   }
-
+  // updateCartCount();
   document.getElementById("listProduct").innerHTML = contentHTML;
 };
+
+// render Gio Hang
+const openPanelCart = () => {
+  const cartBtn = document.getElementById("cartButton");
+  const panel = document.getElementById("cartPanel");
+  const overlay = document.getElementById("cartOverlay");
+
+  const openCart = () => {
+    panel.classList.add("active");
+    overlay.classList.add("active");
+  };
+
+  const closeCart = () => {
+    panel.classList.remove("active");
+    overlay.classList.remove("active");
+  };
+
+  // Mở panel khi click vào icon giỏ hàng
+  cartBtn.addEventListener("click", openCart);
+
+  // Đóng panel khi click vào overlay
+  overlay.addEventListener("click", closeCart);
+
+  // Đóng khi click nút close
+  panel.querySelectorAll(".close-btn").forEach(btn => {
+    btn.addEventListener("click", closeCart);
+  });
+};
+
+document.addEventListener("DOMContentLoaded", openPanelCart);
+

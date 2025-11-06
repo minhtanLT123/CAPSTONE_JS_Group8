@@ -1,11 +1,54 @@
-class GioHang {
-    constructor(id, name, price, image, quantity = 1) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.image = image;
-        this.quantity = quantity;
-    }
-}
+const cartBtn = document.getElementById("cartButton");
+const panel = document.getElementById("cartPanel");
+const closeBtn = document.getElementById("closeCart");
+const cartItemsContainer = document.getElementById("cartItems");
+const cartTotal = document.getElementById("cartTotal");
 
-export default GioHang;
+// Mở/đóng panel
+cartBtn.addEventListener("click", () => {
+  renderCart();
+  panel.classList.toggle("active");
+});
+
+closeBtn.addEventListener("click", () => {
+  panel.classList.remove("active");
+});
+
+document.addEventListener("click", (e) => {
+  if (!panel.contains(e.target) && !cartBtn.contains(e.target)) {
+    panel.classList.remove("active");
+  }
+});
+
+// Render sản phẩm trong giỏ
+const renderCart = () => {
+  const cart = JSON.parse(localStorage.getItem("gioHang")) || [];
+  if (cart.length === 0) {
+    cartItemsContainer.innerHTML = `<p class="text-gray-500 text-center">Giỏ hàng trống</p>`;
+    cartTotal.textContent = "0₫";
+    return;
+  }
+
+  let total = 0;
+  let html = cart
+    .map(
+      (item) => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        return `
+          <div class="cart-item">
+            <img src="./img/danhmuc/rau/${item.image}" alt="${item.name}" />
+            <div class="info">
+              <h4>${item.name}</h4>
+              <p>${item.quantity} x ${formatVnd(item.price)}</p>
+            </div>
+            <span class="price">${formatVnd(itemTotal)}</span>
+          </div>
+        `;
+      }
+    )
+    .join("");
+
+  cartItemsContainer.innerHTML = html;
+  cartTotal.textContent = formatVnd(total);
+};

@@ -2,286 +2,295 @@
   position: relative;
   z-index: 100;
 
-  .page-wrapper {
-    .container {
-      height: auto;
-      align-items: center;
+  .container {
+    height: auto;
+    align-items: center;
 
-      .header_content {
-        .header_top {
+    .header_content {
+      .header_top {
 
-          margin-top: $m-2;
+        margin-top: $m-2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .logo {
           display: flex;
           align-items: center;
-          justify-content: space-between;
+          gap: $m-3;
 
-          .logo {
-            display: flex;
-            align-items: center;
-            gap: $m-3;
-
-            img {
-              height: $height-2xl;
-            }
-
-            .searchItem {
-              display: flex;
-              align-items: center;
-              margin-left: $m-3;
-              border: 1px solid #333;
-              border-radius: 8px;
-              width: 500px;
-              height: $height-2xl;
-              overflow: hidden;
-
-              input {
-                width: 90%;
-                border: none;
-                margin: 0 $m-2;
-                font-size: $font-base;
-                outline: none;
-              }
-
-              i {
-                width: $width-xl;
-                height: $height-xl;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: $m-2 $m-2;
-                background-color: $primary-150;
-                color: $text-light;
-                cursor: pointer;
-                border-radius: 8px;
-                margin-left: -$m-3;
-
-              }
-            }
+          img {
+            height: $height-2xl;
           }
 
-          .shopping_cart {
+          .searchItem {
             display: flex;
+            align-items: center;
+            margin-left: $m-3;
+            border: 1px solid #333;
+            border-radius: 8px;
+            width: 500px;
+            height: $height-2xl;
+            overflow: hidden;
 
-            .contact {
-              border: 2px solid;
-              border-radius: 8px;
+            input {
+              width: 90%;
+              border: none;
               margin: 0 $m-2;
-              width: $width-6xl;
-              height: $height-xl;
-              display: flex;
-              align-items: center;
-              justify-content: center;
               font-size: $font-base;
-
-              p {
-                margin-left: $m-2;
-              }
+              outline: none;
             }
 
-            div {
-              display: flex;
-              background-color: $primary-300;
-              border: 2px solid;
-              border-radius: 8px;
-              margin: 0 $m-2;
+            i {
               width: $width-xl;
               height: $height-xl;
-              align-items: center;
-              justify-content: center;
-              color: $text-light;
-
-              i {
-                cursor: pointer;
-              }
-
-              &:hover {
-                background-color: $primary-150;
-                border-radius: 8px;
-              }
-
-            }
-
-
-
-            .cart-icon {
-              position: relative;
               display: flex;
-              align-items: center;
               justify-content: center;
-              width: $width-xl;
-              height: $height-xl;
-              background-color: $primary-300;
-              border: 2px solid;
-              border-radius: 8px;
-              margin: 0 $m-2;
+              align-items: center;
+              padding: $m-2 $m-2;
+              background-color: $primary-150;
               color: $text-light;
               cursor: pointer;
+              border-radius: 8px;
+              margin-left: -$m-3;
 
-              i {
-                font-size: $font-xl;
-              }
-
-              .cart-count {
-                position: absolute;
-                top: -6px;
-                right: -6px;
-                background-color: red;
-                color: white;
-                font-size: 12px;
-                font-weight: bold;
-                border-radius: 50%;
-                padding: 2px 6px;
-                line-height: 1;
-                min-width: 18px;
-                text-align: center;
-              }
-
-              &:hover {
-                background-color: $primary-150;
-              }
             }
-
-
           }
         }
 
-        .header_menu {
-          position: relative;
+        .shopping_cart {
+          display: flex;
 
-          .header_content {
-            display: flex;
-            margin-top: $m-5;
-            background-color: $primary-300;
+          .contact {
+            border: 2px solid;
             border-radius: 8px;
+            margin: 0 $m-2;
+            width: $width-6xl;
+            height: $height-xl;
+            display: flex;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: center;
+            font-size: $font-base;
 
-            .level-1 {
-              a {
-                color: $text-light;
-                text-decoration: none;
-                font-size: $font-xl;
-                font-weight: $fw-xnormal;
-                padding: $m-2 $m-2;
-                margin: 0 $m-4;
-                border-radius: 8px;
-                display: flex;
-                align-items: center;
-                gap: $m-2;
-                height: $height-2xl;
-                transition: background-color 0.3s ease;
-                background: none;
-                border: none;
-                cursor: pointer;
+            p {
+              margin-left: $m-2;
+            }
+          }
 
-                &:hover {
-                  background-color: $primary-150;
-                }
+          div {
+            display: flex;
+            background-color: $primary-300;
+            border: 2px solid;
+            border-radius: 8px;
+            margin: 0 $m-2;
+            width: $width-xl;
+            height: $height-xl;
+            align-items: center;
+            justify-content: center;
+            color: $text-light;
+
+            i {
+              cursor: pointer;
+            }
+
+            &:hover {
+              background-color: $primary-150;
+              border-radius: 8px;
+            }
+
+          }
+
+          .cart-icon {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: $width-xl;
+            height: $height-xl;
+            background-color: $primary-300;
+            border: 2px solid;
+            border-radius: 8px;
+            margin: 0 $m-2;
+            color: $text-light;
+            cursor: pointer;
+
+            i {
+              font-size: $font-xl;
+            }
+
+            .cart-count {
+              position: absolute;
+              top: -6px;
+              right: -6px;
+              background-color: red;
+              color: white;
+              font-size: 12px;
+              font-weight: bold;
+              border-radius: 50%;
+              padding: 2px 6px;
+              line-height: 1;
+              min-width: 18px;
+              text-align: center;
+            }
+
+            &:hover {
+              background-color: $primary-150;
+            }
+
+          }
+
+          .cart-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 400px; // hoặc bằng container
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+
+            &.active {
+              transform: translateX(0);
+            }
+          }
+        }
+      }
+
+      .header_menu {
+        position: relative;
+
+        .header_content {
+          display: flex;
+          margin-top: $m-5;
+          background-color: $primary-300;
+          border-radius: 8px;
+          align-items: center;
+          justify-content: flex-start;
+
+          .level-1 {
+            a {
+              color: $text-light;
+              text-decoration: none;
+              font-size: $font-xl;
+              font-weight: $fw-xnormal;
+              padding: $m-2 $m-2;
+              margin: 0 $m-4;
+              border-radius: 8px;
+              display: flex;
+              align-items: center;
+              gap: $m-2;
+              height: $height-2xl;
+              transition: background-color 0.3s ease;
+              background: none;
+              border: none;
+              cursor: pointer;
+
+              &:hover {
+                background-color: $primary-150;
+              }
+            }
+          }
+
+          li {
+            position: relative;
+            list-style: none;
+
+
+            button,
+            .spTitle {
+              color: $text-light;
+              text-decoration: none;
+              font-size: $font-xl;
+              font-weight: $fw-xnormal;
+              padding: $m-2 $m-2;
+              margin: 0 $m-4;
+              border-radius: 8px;
+              display: flex;
+              align-items: center;
+              gap: $m-2;
+              height: $height-2xl;
+              transition: background-color 0.3s ease;
+              background: none;
+              border: none;
+              cursor: pointer;
+
+              &:hover {
+                background-color: $primary-150;
               }
             }
 
-            li {
-              position: relative;
-              list-style: none;
+            &.spContent {
+              position: static;
 
-
-              button,
               .spTitle {
-                color: $text-light;
-                text-decoration: none;
-                font-size: $font-xl;
-                font-weight: $fw-xnormal;
-                padding: $m-2 $m-2;
-                margin: 0 $m-4;
-                border-radius: 8px;
                 display: flex;
                 align-items: center;
-                gap: $m-2;
-                height: $height-2xl;
-                transition: background-color 0.3s ease;
-                background: none;
-                border: none;
-                cursor: pointer;
 
-                &:hover {
-                  background-color: $primary-150;
+                button,
+                a,
+                i {
+                  margin: 0;
+                  padding: 0;
                 }
               }
 
-              &.spContent {
-                position: static;
+              .dropdownMenu {
+                z-index: 50;
+                position: absolute;
+                top: 100%; // nằm ngay dưới li
+                left: 0;
+                width: 100%; // toàn chiều rộng màn hình (giống kiểu mega menu lớn)
+                background: $light;
+                display: flex;
+                flex-direction: row;
+                padding: $m-4;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
 
-                .spTitle {
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(10px);
+                transition: all 0.3s ease;
+
+                .menu_child {
+                  width: 75%;
+                  display: grid;
+                  grid-template-columns: repeat(4, 1fr);
+                  gap: $m-3;
+
+                  h2 {
+                    color: $primary-300;
+                  }
+
+                  h2,
+                  ul li {
+                    cursor: pointer;
+                  }
+
+                  font-size: $font-base;
+                  color: #333;
+                  line-height: 1.5;
+                }
+
+                .image_salad {
+                  width: 25%;
                   display: flex;
+                  justify-content: center;
                   align-items: center;
 
-                  button,
-                  a,
-                  i {
-                    margin: 0;
-                    padding: 0;
+                  img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 8px;
+                    object-fit: cover;
                   }
                 }
+              }
 
+              &:hover {
                 .dropdownMenu {
-                  z-index: 50;
-                  position: absolute;
-                  top: 100%; // nằm ngay dưới li
-                  left: 0;
-                  width: 100%; // toàn chiều rộng màn hình (giống kiểu mega menu lớn)
-                  background: $light;
-                  display: flex;
-                  flex-direction: row;
-                  padding: $m-4;
-                  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                  border-radius: 8px;
-
-                  opacity: 0;
-                  visibility: hidden;
-                  transform: translateY(10px);
-                  transition: all 0.3s ease;
-
-                  .menu_child {
-                    width: 75%;
-                    display: grid;
-                    grid-template-columns: repeat(4, 1fr);
-                    gap: $m-3;
-
-                    h2 {
-                      color: $primary-300;
-                    }
-
-                    h2,
-                    ul li {
-                      cursor: pointer;
-                    }
-
-                    font-size: $font-base;
-                    color: #333;
-                    line-height: 1.5;
-                  }
-
-                  .image_salad {
-                    width: 25%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    img {
-                      width: 100%;
-                      height: auto;
-                      border-radius: 8px;
-                      object-fit: cover;
-                    }
-                  }
-                }
-
-                &:hover {
-                  .dropdownMenu {
-                    opacity: 1;
-                    visibility: visible;
-                    transform: translateY(0);
-                  }
+                  opacity: 1;
+                  visibility: visible;
+                  transform: translateY(0);
                 }
               }
             }
@@ -289,5 +298,18 @@
         }
       }
     }
+  }
+}
+
+/* Hiệu ứng khi panel mở */
+#cartPanel {
+  &.active {
+    scale: 1; // bật lên
+  }
+}
+
+#cartOverlay {
+  &.active {
+    display: block;
   }
 }
