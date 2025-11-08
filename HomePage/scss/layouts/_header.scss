@@ -7,6 +7,8 @@
     align-items: center;
 
     .header_content {
+
+
       .header_top {
 
         margin-top: $m-2;
@@ -61,6 +63,7 @@
 
         .shopping_cart {
           display: flex;
+          justify-content: flex-end;
 
           .contact {
             border: 2px solid;
@@ -177,7 +180,7 @@
             a {
               color: $text-light;
               text-decoration: none;
-              font-size: $font-xl;
+              font-size: $font-2xl;
               font-weight: $fw-xnormal;
               padding: $m-1 $m-1;
               margin: 0 $m-1;
@@ -185,7 +188,7 @@
               display: flex;
               align-items: center;
               gap: $m-2;
-              height: $height-2xl;
+              height: $height-xl;
               transition: background-color 0.3s ease;
               background: none;
               border: none;
@@ -310,18 +313,23 @@
 
 @media (min-width: 1024px) and (max-width: 1160px) {
   .header {
+    width: 100%;
+
     .container {
       padding: 0 2rem;
     }
 
     .header_top {
-      flex-direction: column;
-      align-items: flex-start;
+      // flex-direction: column;
+      // align-items: flex-start;
+
+      margin-bottom: 15px;
 
       .logo {
-        flex-direction: column;
+        width: 40%;
+        // flex-direction: column;
         align-items: flex-start;
-        flex: 1;
+        // flex: 1;
 
         .searchItem {
           width: 100%;
@@ -330,6 +338,7 @@
       }
 
       .shopping_cart {
+        width: 60%;
         flex-wrap: wrap;
         gap: 1rem;
         margin-top: 1rem;
@@ -344,7 +353,7 @@
         gap: 0.5rem;
 
         li {
-          font-size: $font-2xl;
+          font-size: $font-xl;
         }
 
       }
@@ -355,6 +364,8 @@
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .header {
+    width: 100%;
+
     .container {
       padding: 0 2rem;
     }
@@ -364,7 +375,7 @@
       align-items: flex-start;
 
       .logo {
-        flex-direction: column;
+        // flex-direction: column;
         align-items: flex-start;
         flex: 1;
 
@@ -393,8 +404,10 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (min-width: 550px) and (max-width: 767px) {
   .header {
+    width: 100%;
+
     .container {
       padding: 0 1rem;
     }
@@ -402,9 +415,101 @@
     .header_top {
       flex-direction: column;
       align-items: stretch;
-      flex-wrap: wrap;
+      // flex-wrap: wrap;
+      justify-content: space-around;
 
       .logo {
+        // flex-direction: column;
+        align-items: stretch;
+
+        .searchItem {
+          flex: 1;
+          width: 800%;
+          margin-top: 1rem;
+
+
+
+        }
+      }
+
+      .shopping_cart {
+
+        gap: 0.75rem;
+        margin-top: 1rem;
+        display: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1rem;
+        justify-content: center;
+
+        .contact {
+          display: none;
+        }
+      }
+    }
+
+    .header_menu {
+      ul.header_content {
+        flex-direction: column;
+        gap: 0.5rem;
+
+        li.level-1,
+        .spContent {
+          width: 100%;
+          text-align: left;
+        }
+
+        .dropdownMenu {
+          flex-direction: column;
+
+          .menu_child {
+            grid-template-columns: repeat(2, 1fr);
+          }
+
+          .image_salad {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .header {
+    .menu-toggle {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .header_menu {
+      display: none; // Ẩn menu mặc định
+
+      &.active {
+        display: block; // Hiện menu khi có class active
+      }
+    }
+  }
+}
+
+@media (max-width: 549px) {
+  .header {
+    width: 100%;
+
+    .container {
+      padding: 0 1rem;
+    }
+
+    .header_top {
+      display: flex;
+      align-items: stretch;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .logo {
+        display: flex;
         flex-direction: column;
         align-items: stretch;
 
@@ -428,6 +533,8 @@
         gap: 0.75rem;
         margin-top: 1rem;
         justify-content: center;
+
+
       }
     }
 

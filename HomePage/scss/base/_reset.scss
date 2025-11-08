@@ -2,13 +2,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
+  overflow-x: hidden;
 }
 
 
 body {
   font-family: "Poppins", sans-serif;
   color: $text-dark;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .page-wrapper {
@@ -17,6 +19,7 @@ body {
   margin: 0 auto; // căn giữa toàn màn hình
   padding: 0 1rem; // đệm hai bên
   position: relative;
+  overflow-x: hidden;
 
 }
 
@@ -24,5 +27,6 @@ body {
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 0;
+  overflow-x: hidden;
 }

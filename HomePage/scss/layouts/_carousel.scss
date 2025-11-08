@@ -1,5 +1,6 @@
 .carousel {
   z-index: 10;
+  overflow: hidden;
 
   position: relative;
   width: calc(100% + 200px);
@@ -16,6 +17,22 @@
     display: block;
   }
 
+
+  @media (min-width: 993px) and (max-width: 1350px) {
+    width: 100%;
+    left: 0;
+    transform: none;
+
+    img {
+      aspect-ratio: 16/6;
+      transform: scale(0.9); // scale nhỏ lại 90%
+      transform-origin: center; // tâm ảnh ở giữa
+    }
+  }
+
+
+
+
   @media (max-width: 992px) {
     width: 100%;
     left: 0;
@@ -26,5 +43,4 @@
       display: none;
     }
   }
-
 }
