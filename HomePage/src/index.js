@@ -32,6 +32,7 @@ const renderRating = (rating) => {
   }
   return contentRating;
 };
+
 // format VND
 const formatVnd = (price) => {
   return new Intl.NumberFormat('vi-VN', {
@@ -39,15 +40,21 @@ const formatVnd = (price) => {
     currency: 'VND',
   }).format(price);
 };
+
 // --- LẤY GIỎ HÀNG TỪ LOCALSTORAGE ---
 const getCart = () => {
-  return JSON.parse(localStorage.getItem("gioHang")) || [];
+  try {
+    return JSON.parse(localStorage.getItem("gioHang")) || [];
+  } catch {
+    return [];
+  }
 };
 
 // --- LƯU GIỎ HÀNG ---
 const saveCart = (cart) => {
   localStorage.setItem("gioHang", JSON.stringify(cart));
 };
+
 // --- RENDER GIỎ HÀNG PANEL ---
 const renderCart = () => {
   const cart = getCart();
@@ -58,10 +65,13 @@ const renderCart = () => {
     cartItemsContainer.innerHTML = `<p class="text-center text-gray-500">Giỏ hàng trống</p>`;
     return;
   }
-
+  let total = 0;
   cart.forEach(item => {
     const totalPrice = item.price * item.quantity;
+    total += totalPrice;
     const div = document.createElement("div");
+
+    total += item.price * item.quantity;
     div.className =
       "cart-item grid grid-cols-5 items-center gap-4 border-b border-gray-100 pb-3";
 
@@ -87,8 +97,13 @@ const renderCart = () => {
       <!-- Giá -->
       <div class="font-semibold text-blue-600 text-right">${formatVnd(totalPrice)}</div>
     `;
+
     cartItemsContainer.appendChild(div);
   });
+  const totalDiv = document.createElement("div");
+  totalDiv.className = "text-right font-semibold text-lg text-blue-700 mt-4";
+  totalDiv.textContent = `Tổng cộng: ${formatVnd(total)}`;
+  cartItemsContainer.appendChild(totalDiv);
 };
 
 //--- THÊM SẢN PHẨM VÀO GIỎ HÀNG ---
@@ -146,6 +161,7 @@ function updateQuantity(id, change) {
     renderCart();
   }
 }
+window.updateQuantity = updateQuantity;
 
 
 const renderProducts = (data) => {
