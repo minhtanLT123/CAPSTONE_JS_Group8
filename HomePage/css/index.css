@@ -479,8 +479,8 @@ body {
   width: 60%;
   height: 60%;
   position: absolute;
-  top: -8px;
-  right: -8px;
+  top: -4px;
+  right: -4px;
   background-color: red;
   color: white;
   font-size: 12px;
@@ -510,6 +510,10 @@ body {
 }
 .header .container .header_content .header_menu {
   position: relative;
+  overflow: hidden;
+  /* Ẩn cuộn ngang/dọc */
+  white-space: nowrap;
+  /* Giữ các item trên cùng 1 dòng */
 }
 .header .container .header_content .header_menu .header_content {
   display: flex;
@@ -545,6 +549,7 @@ body {
 }
 .header .container .header_content .header_menu .header_content li button,
 .header .container .header_content .header_menu .header_content li .spTitle {
+  overflow: hidden;
   color: #fff;
   text-decoration: none;
   font-size: 18px;
@@ -579,7 +584,7 @@ body {
   padding: 0;
 }
 .header .container .header_content .header_menu .header_content li.spContent .dropdownMenu {
-  z-index: 50;
+  z-index: 300;
   position: absolute;
   top: 100%;
   left: 0;
@@ -594,6 +599,7 @@ body {
   visibility: hidden;
   transform: translateY(10px);
   transition: all 0.3s ease;
+  overflow: hidden;
 }
 .header .container .header_content .header_menu .header_content li.spContent .dropdownMenu .menu_child {
   width: 75%;
@@ -962,10 +968,9 @@ a.active:after {
   gap: 2rem;
   justify-items: center;
   align-items: center;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
 }
 .products .typesanpham .sanphamicon {
+  margin: 0.5rem;
   display: flex;
   flex-direction: column;
 }
@@ -981,6 +986,7 @@ a.active:after {
 }
 .products .products__content {
   margin-top: 3rem;
+  padding: 2rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 3rem;

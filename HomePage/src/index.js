@@ -1,4 +1,7 @@
 
+let allProducts = []; // lưu toàn bộ dữ liệu từ API
+let currentType = null; // theo dõi loại đang được chọn
+
 const getListProducts = () => {
   /**
    * axios trả về đối tượng promise (lời hứa)
@@ -13,7 +16,8 @@ const getListProducts = () => {
 
   promise
     .then((result) => {
-      renderProducts(result.data);
+      allProducts = result.data;
+      renderProducts(allProducts);
     })
     .catch((error) => {
       console.log(error);
@@ -21,6 +25,20 @@ const getListProducts = () => {
 };
 
 getListProducts();
+
+// Hàm lọc theo type
+function findTypeItem(type) {
+  // Nếu click lại cùng loại thì hiển thị toàn bộ
+  if (currentType === type || !type) {
+    currentType = null;
+    renderProducts(allProducts);
+    return;
+  }
+  currentType = type;
+  const filtered = productList.filter((item) => item.type === type);
+  renderProducts(filtered);
+}
+window.findTypeItem = findTypeItem;
 
 // render rating
 const renderRating = (rating) => {
@@ -167,9 +185,14 @@ function updateQuantity(id, change) {
 }
 window.updateQuantity = updateQuantity;
 
-
+// Hàm render danh sách sản phẩm
 const renderProducts = (data) => {
   window.productList = data; // 👈 Thêm dòng này
+  const container = document.querySelector(".product-list");
+  if (!data.length) {
+    container.innerHTML = `<p>Không có sản phẩm phù hợp.</p>`;
+    return;
+  }
   let contentHTML = "";
   for (let i = 0; i < data.length; i++) {
     const product = data[i];

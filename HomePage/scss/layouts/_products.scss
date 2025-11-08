@@ -11,10 +11,9 @@
     justify-items: center; // căn giữa nội dung mỗi ô (tùy chọn)
     align-items: center; // căn giữa theo chiều dọc
 
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-
     .sanphamicon {
+
+      margin: 0.5rem;
       display: flex;
       flex-direction: column;
 
@@ -35,6 +34,7 @@
 
   .products__content {
     margin-top: 3rem;
+    padding: 2rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 3rem;

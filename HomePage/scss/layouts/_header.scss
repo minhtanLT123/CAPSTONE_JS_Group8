@@ -127,8 +127,8 @@
               width: 60%;
               height: 60%;
               position: absolute;
-              top: -8px;
-              right: -8px;
+              top: -4px;
+              right: -4px;
               background-color: red;
               color: white;
               font-size: 12px;
@@ -167,6 +167,11 @@
       .header_menu {
         position: relative;
 
+        overflow: hidden;
+        /* Ẩn cuộn ngang/dọc */
+        white-space: nowrap;
+        /* Giữ các item trên cùng 1 dòng */
+
         .header_content {
           display: flex;
           margin-top: $m-2;
@@ -175,6 +180,7 @@
           align-items: center;
           // justify-content: flex-start;
           justify-content: center;
+
 
           .level-1 {
             a {
@@ -207,6 +213,8 @@
 
             button,
             .spTitle {
+              // width: 100%;
+              overflow: hidden;
               color: $text-light;
               text-decoration: none;
               font-size: $font-xl;
@@ -244,7 +252,7 @@
               }
 
               .dropdownMenu {
-                z-index: 50;
+                z-index: 300;
                 position: absolute;
                 top: 100%; // nằm ngay dưới li
                 left: 0;
@@ -260,6 +268,7 @@
                 visibility: hidden;
                 transform: translateY(10px);
                 transition: all 0.3s ease;
+                overflow: hidden;
 
                 .menu_child {
                   width: 75%;
