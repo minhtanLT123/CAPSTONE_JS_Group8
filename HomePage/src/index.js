@@ -67,7 +67,7 @@ const renderCart = () => {
   }
   let total = 0;
   cart.forEach(item => {
-    const totalPrice = item.price * item.quantity;
+    const totalPrice = item.price * item.quantity * (1 - item.discount / 100);
     total += totalPrice;
     const div = document.createElement("div");
 
@@ -122,7 +122,8 @@ const onHandleAddShoppingCart = (id) => {
 
   saveCart(cart);
   renderCart();
-  openCartPanel();
+  // openCartPanel();
+  showToast(`Đã thêm "${product.name}" vào giỏ hàng!`);
 };
 window.onHandleAddShoppingCart = onHandleAddShoppingCart;
 
@@ -186,7 +187,7 @@ const renderProducts = (data) => {
                    </div>
                   </div>
                    
-                  <div class="price mt-10 justify-between">
+                  <div class="price mt-2 justify-between">
                     <h2 class ="newPrice">${formatVnd(product.price * (1 - product.discount / 100))}</h2>
                     <h2 class = "oldPrice" >${formatVnd(product.price)}</h2>
                    
@@ -208,6 +209,42 @@ const renderProducts = (data) => {
 
   document.getElementById("listProduct").innerHTML = contentHTML;
 };
+
+
+function showToast(message = "Đã thêm sản phẩm vào giỏ hàng!") {
+  const container = document.getElementById("toast-container");
+
+  // Tạo phần tử toast
+  const toast = document.createElement("div");
+  toast.className =
+    "toast-item flex items-center w-full max-w-xs p-4 mb-2 text-gray-500 bg-white rounded-lg shadow-lg border-l-4 border-green-500 transition-all duration-500 transform translate-y-5 opacity-0";
+  toast.innerHTML = `
+    <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-full">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"
+        viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M5 13l4 4L19 7"></path>
+      </svg>
+    </div>
+    <div class="ml-3 text-sm font-semibold text-gray-700">${message}</div>
+  `;
+
+  container.appendChild(toast);
+
+  // Kích hoạt animation (slide lên)
+  setTimeout(() => {
+    toast.classList.remove("translate-y-5", "opacity-0");
+    toast.classList.add("translate-y-0", "opacity-100");
+  }, 50);
+
+  // Ẩn sau 3s
+  setTimeout(() => {
+    toast.classList.remove("translate-y-0", "opacity-100");
+    toast.classList.add("translate-y-5", "opacity-0");
+    setTimeout(() => toast.remove(), 500);
+  }, 3000);
+}
+
 
 // --- INIT ---
 document.addEventListener("DOMContentLoaded", () => {
