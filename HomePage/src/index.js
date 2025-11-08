@@ -62,18 +62,35 @@ const renderCart = () => {
   cart.forEach(item => {
     const totalPrice = item.price * item.quantity;
     const div = document.createElement("div");
-    div.className = "cart-item flex items-center justify-between mb-4";
+    div.className =
+      "cart-item grid grid-cols-5 items-center gap-4 border-b border-gray-100 pb-3";
+
     div.innerHTML = `
-      <img src="./img/danhmuc/${item.type || 'rau-cu'}/${item.image}" class="w-16 h-16 rounded-xl object-cover" />
-      <div class="flex-1 ml-4">
+      <!-- Hình ảnh -->
+      <img src="./img/danhmuc/${item.type || "rau-cu"}/${item.image}" 
+           class="w-16 h-16 rounded-xl object-cover" />
+
+      <!-- Tên sản phẩm -->
+      <div class="col-span-2">
         <h4 class="font-medium text-gray-700">${item.name}</h4>
-        <p class="text-sm text-gray-500">Số lượng: ${item.quantity}</p>
       </div>
-      <div class="font-semibold text-blue-600">${formatVnd(totalPrice)}</div>
+
+      <!-- Số lượng -->
+      <div class="flex justify-center items-center gap-2">
+        <button onclick="updateQuantity('${item.id}', -1)" 
+                class="w-6 h-6 flex items-center justify-center bg-gray-200 rounded hover:bg-gray-300">−</button>
+        <p class="text-sm text-gray-700 font-medium">${item.quantity}</p>
+        <button onclick="updateQuantity('${item.id}', 1)" 
+                class="w-6 h-6 flex items-center justify-center bg-gray-200 rounded hover:bg-gray-300">+</button>
+      </div>
+
+      <!-- Giá -->
+      <div class="font-semibold text-blue-600 text-right">${formatVnd(totalPrice)}</div>
     `;
     cartItemsContainer.appendChild(div);
   });
 };
+
 //--- THÊM SẢN PHẨM VÀO GIỎ HÀNG ---
 const onHandleAddShoppingCart = (id) => {
   const product = window.productList.find(p => p.id === id);
@@ -118,6 +135,17 @@ const closeCartPanel = () => {
 document.querySelectorAll("#cartPanel .close-btn").forEach(btn => {
   btn.addEventListener("click", closeCartPanel);
 });
+// cập nhật số lượng
+function updateQuantity(id, change) {
+  const cart = getCart();
+  const index = cart.findIndex(item => item.id === id);
+  if (index !== -1) {
+    cart[index].quantity += change;
+    if (cart[index].quantity <= 0) cart.splice(index, 1);
+    saveCart(cart);
+    renderCart();
+  }
+}
 
 
 const renderProducts = (data) => {

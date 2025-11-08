@@ -358,7 +358,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -502,7 +502,7 @@ body {
 }
 .header .container .header_content .header_menu .header_content {
   display: flex;
-  margin-top: 1.25rem;
+  margin-top: 0.5rem;
   background-color: #679210;
   border-radius: 8px;
   align-items: center;
@@ -513,8 +513,8 @@ body {
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;
-  padding: 0.5rem 0.5rem;
-  margin: 0 1rem;
+  padding: 0.25rem 0.25rem;
+  margin: 0 0.25rem;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -1000,6 +1000,50 @@ a.active:after {
   gap: 2px;
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .footer .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer .container .thanhtoan,
+  .footer .container .chinhsach,
+  .footer .container .thongtin,
+  .footer .container .instagram {
+    width: 80%;
+    margin: 1rem 0;
+  }
+  .footer .container .insta_img {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .footer .container {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 1rem;
+  }
+  .footer .container .thanhtoan,
+  .footer .container .chinhsach,
+  .footer .container .thongtin,
+  .footer .container .instagram {
+    width: 100%;
+    margin: 1rem 0;
+  }
+  .footer .container .thanhtoan_img,
+  .footer .container .lienket_img {
+    justify-content: center;
+    width: 100%;
+  }
+  .footer .container .insta_img {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+  }
+  .footer h1 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
 .style_panel {
   overflow: hidden;
   z-index: 100;
@@ -1010,4 +1054,8 @@ a.active:after {
 }
 .style_panel #cartOverlay.active {
   display: block;
+}
+
+.soluong {
+  display: flex;
 }/*# sourceMappingURL=index.css.map */

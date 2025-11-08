@@ -57,3 +57,59 @@
         }
     }
 }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .footer {
+        .container {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            .thanhtoan,
+            .chinhsach,
+            .thongtin,
+            .instagram {
+                width: 80%;
+                margin: 1rem 0;
+            }
+
+            .insta_img {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .footer {
+        .container {
+            flex-direction: column;
+            align-items: stretch;
+            padding: 0 1rem;
+
+            .thanhtoan,
+            .chinhsach,
+            .thongtin,
+            .instagram {
+                width: 100%;
+                margin: 1rem 0;
+            }
+
+            .thanhtoan_img,
+            .lienket_img {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .insta_img {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 4px;
+            }
+        }
+
+        h1 {
+            font-size: 1.2rem;
+            text-align: center;
+        }
+    }
+}

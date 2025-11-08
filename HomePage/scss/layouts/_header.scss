@@ -160,7 +160,7 @@
 
         .header_content {
           display: flex;
-          margin-top: $m-5;
+          margin-top: $m-2;
           background-color: $primary-300;
           border-radius: 8px;
           align-items: center;
@@ -172,8 +172,8 @@
               text-decoration: none;
               font-size: $font-xl;
               font-weight: $fw-xnormal;
-              padding: $m-2 $m-2;
-              margin: 0 $m-4;
+              padding: $m-1 $m-1;
+              margin: 0 $m-1;
               border-radius: 8px;
               display: flex;
               align-items: center;
