@@ -381,7 +381,6 @@ body {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  flex: 1;
 }
 .header .container .header_content .header_top .logo img {
   height: 50px;
@@ -422,6 +421,7 @@ body {
 .header .container .header_content .header_top .shopping_cart .contact {
   border: 2px solid;
   border-radius: 8px;
+  margin: 0 0.5rem;
   width: 200px;
   height: 40px;
   display: flex;
@@ -437,6 +437,7 @@ body {
   background-color: #679210;
   border: 2px solid;
   border-radius: 8px;
+  margin: 0 0.5rem;
   width: 40px;
   height: 40px;
   align-items: center;
@@ -468,18 +469,23 @@ body {
   font-size: 18px;
 }
 .header .container .header_content .header_top .shopping_cart .cart-icon .cart-count {
+  display: flex;
+  width: 60%;
+  height: 60%;
   position: absolute;
-  top: -6px;
-  right: -6px;
+  top: -8px;
+  right: -8px;
   background-color: red;
   color: white;
   font-size: 12px;
   font-weight: bold;
   border-radius: 50%;
   padding: 2px 6px;
+  z-index: 100;
   line-height: 1;
   min-width: 18px;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 .header .container .header_content .header_top .shopping_cart .cart-icon:hover {
   background-color: #76a713;
@@ -823,6 +829,33 @@ a.active:after {
   justify-content: space-between;
 }
 
+/* .backToTop */
+.backToTop {
+  width: 50px;
+  height: 50px;
+  background: #679210;
+  border-radius: 8px;
+  line-height: 50px;
+  text-align: center;
+  display: block;
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  color: white;
+  transition: all 0.2s;
+  box-shadow: -4px 4px 24px -10px #f55f8d;
+  opacity: 0;
+}
+
+.cd-top--is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.cd-top--fade-out {
+  opacity: 0.8;
+}
+
 .products .title {
   font-size: 30px;
   color: #000;
@@ -855,7 +888,7 @@ a.active:after {
 .products .products__content {
   margin-top: 3rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 3rem;
 }
 .products .products__content .products__item .card {

@@ -26,7 +26,6 @@
 <body>
 
   <header class="header">
-
     <div class="page-wrapper">
       <div class="container">
         <div class="header_content">
@@ -58,8 +57,9 @@
               <button data-modal-target="popup-modal" data-modal-toggle="popup-modal"
                 class=" cartBtn cart-icon block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 type="button">
+                <span class="cart-count"></span>
                 <span> <i class="fa-solid fa-cart-shopping"></i></span>
-                <span class="cart-count">1</span>
+
               </button>
 
             </div>
@@ -293,12 +293,23 @@
   <!-- Toast Notification -->
   <div id="toast-container" class="fixed bottom-6 right-6 z-[9999] flex flex-col gap-3"></div>
 
+  <!-- backToTop -->
+  <a href="#" class="backToTop cd-top text-replace js-cd-top">
+    <i class="fa fa-arrow-up"></i>
+  </a>
 
   <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.11.0/axios.min.js"
     integrity="sha512-h9644v03pHqrIHThkvXhB2PJ8zf5E9IyVnrSfZg8Yj8k4RsO4zldcQc4Bi9iVLUCCsqNY0b4WXVV4UB+wbWENA=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script type="module" src="./src/index.js"></script>
+  <script src="./src/libs/backToTop/util.js"></script>
+  <script src="./src/libs/backToTop/main.js"></script>
+  <script src="./src/libs/wowjs/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+
 </body>
 
 </html>

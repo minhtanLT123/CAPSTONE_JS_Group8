@@ -123,6 +123,7 @@ const onHandleAddShoppingCart = (id) => {
   saveCart(cart);
   renderCart();
   // openCartPanel();
+  updateCartCount();
   showToast(`Đã thêm "${product.name}" vào giỏ hàng!`);
 };
 window.onHandleAddShoppingCart = onHandleAddShoppingCart;
@@ -151,6 +152,7 @@ const closeCartPanel = () => {
 document.querySelectorAll("#cartPanel .close-btn").forEach(btn => {
   btn.addEventListener("click", closeCartPanel);
 });
+
 // cập nhật số lượng
 function updateQuantity(id, change) {
   const cart = getCart();
@@ -160,6 +162,7 @@ function updateQuantity(id, change) {
     if (cart[index].quantity <= 0) cart.splice(index, 1);
     saveCart(cart);
     renderCart();
+    updateCartCount(); //Cập nhật số hiển thị
   }
 }
 window.updateQuantity = updateQuantity;
@@ -244,7 +247,18 @@ function showToast(message = "Đã thêm sản phẩm vào giỏ hàng!") {
     setTimeout(() => toast.remove(), 500);
   }, 3000);
 }
-
+// cập nhật số lượng
+function updateCartCount() {
+  const cart = getCart();
+  const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const cartCountEl = document.querySelector(".cart-count");
+  if (cartCountEl) {
+    cartCountEl.textContent = totalCount;
+    // Ẩn nếu 0
+    cartCountEl.style.display = totalCount > 0 ? "inline-block" : "none";
+  }
+}
+document.addEventListener("DOMContentLoaded", updateCartCount);
 
 // --- INIT ---
 document.addEventListener("DOMContentLoaded", () => {

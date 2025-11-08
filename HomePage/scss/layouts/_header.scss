@@ -18,7 +18,7 @@
           display: flex;
           align-items: center;
           gap: $m-3;
-          flex: 1;
+
 
           img {
             height: $height-2xl;
@@ -65,7 +65,7 @@
           .contact {
             border: 2px solid;
             border-radius: 8px;
-            // margin: 0 $m-2;
+            margin: 0 $m-2;
             width: $width-6xl;
             height: $height-xl;
             display: flex;
@@ -83,7 +83,7 @@
             background-color: $primary-300;
             border: 2px solid;
             border-radius: 8px;
-            // margin: 0 $m-2;
+            margin: 0 $m-2;
             width: $width-xl;
             height: $height-xl;
             align-items: center;
@@ -120,18 +120,23 @@
             }
 
             .cart-count {
+              display: flex;
+              width: 60%;
+              height: 60%;
               position: absolute;
-              top: -6px;
-              right: -6px;
+              top: -8px;
+              right: -8px;
               background-color: red;
               color: white;
               font-size: 12px;
               font-weight: bold;
               border-radius: 50%;
               padding: 2px 6px;
+              z-index: 100;
               line-height: 1;
               min-width: 18px;
-              text-align: center;
+              justify-content: center;
+              align-items: center;
             }
 
             &:hover {
