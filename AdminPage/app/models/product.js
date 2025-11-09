@@ -1,13 +1,14 @@
 class Product {
-    constructor(_id, _name, _price, _type, _discount, _image, _rating, _description) {
+    constructor(_id, _name, _type, _price, _discount, _image, _description, _rating) {
         this.id = _id;
         this.name = _name;
-        this.price = _price;
         this.type = _type;
+        this.price = _price;
         this.discount = _discount;
         this.image = _image;
-        this.rating = _rating;
         this.description = _description;
+        this.rating = _rating;
+
 
     }
 

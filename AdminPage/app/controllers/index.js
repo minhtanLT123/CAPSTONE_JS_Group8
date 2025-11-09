@@ -1,4 +1,4 @@
-import ApiServices from "./../services/apiServices.js";
+import ApiServices from "../services/apiServices.js";
 import Product from "../models/product.js";
 
 const api = new ApiServices();
@@ -6,6 +6,11 @@ const getEle = (id) => {
   return document.getElementById(id);
 
 }
+
+// clear form
+// const resetForm = () => {
+//   getEle("form-id").reset();
+// }
 
 const getListProduct = () => {
   const promise = api.getListProductApi();
@@ -29,16 +34,18 @@ const renderListProduct = (data) => {
         <tr>
             <td>${i + 1}</td>
             <td>${product.name}</td>
+            <td>${product.type}</td>
             <td>${product.price}</td>
             <td> ${product.discount}%</td>
             <td>
-                <img src="./../../assets/${product.type}/${product.image}" width="50" />
+                <img src="../images/${product.type}/${product.image}" width="50" />
+                
             </td>
             <td> ${product.description}</td>
            
             <td> 
-              <button class = " btn btn-info " data-toggle="modal" data-target="#myModal" onclick = " handleEditProduct(${product.id})"> Edit </button> 
-              <button class = " btn btn-danger " onclick = " handleDeleteProduct(${product.id})"> Delete </button> 
+              <button class = " btn btn-info " data-toggle="modal" data-target="#myModal" onclick = "handleEditProduct(${product.id})"> Edit </button> 
+              <button class = " btn btn-danger " onclick = "handleDeleteProduct(${product.id})"> Delete </button> 
             <td/>
            
         </tr>
@@ -53,7 +60,7 @@ const renderListProduct = (data) => {
  */
 const handleDeleteProduct = (id) => {
   console.log(id);
-  const promise = api.deleteProductApid(id);
+  const promise = api.deleteProductApi(id);
   promise
     .then((result) => {
       console.log(result);
@@ -84,20 +91,23 @@ getEle("btnThemSP").onclick = () => {
  */
 
 const handleAddProduct = () => {
+
   // Get data form user input
   const name = getEle("TenSP").value;
   const price = getEle("GiaSP").value;
+  const type = getEle("LoaiSP").value;
   const discount = getEle("phantramKM").value;
   const image = getEle("HinhSP").value;
+  // const image = getEle("HinhSP").files[0]?.name || "";
   const description = getEle("Mota").value;
   const rating = getEle("Rating").value;
 
   // create object product
-  const product = new Product("", name, price, discount, description, image, rating);
+  const product = new Product("", name, type, price, discount, image, description, rating);
   console.log(product);
 
   // add product to server
-  const promise = api.addProductApid(product);
+  const promise = api.addProductApi(product);
   promise
     .then((result) => {
       console.log(result.data);
@@ -110,6 +120,8 @@ const handleAddProduct = () => {
       console.log(error);
 
     })
+  console.log("type:", product.type);
+  console.log("image:", product.image);
 
 }
 window.handleAddProduct = handleAddProduct;
@@ -119,7 +131,7 @@ window.handleAddProduct = handleAddProduct;
  */
 const handleEditProduct = (id) => {
   document.getElementsByClassName("modal-title")[0].innerHTML = "Update Product";
-  const updateProductBtn = `<button class = "btn btn-primary"  >Update Product</button>`;
+  const updateProductBtn = `<button class = "btn btn-primary" onclick ="handleUpdateProduct(${id})" >Update Product</button>`;
   document.getElementsByClassName("modal-footer")[0].innerHTML = updateProductBtn;
   // get product by id
   const promise = api.getProductByIdApi(id);
@@ -165,4 +177,6 @@ const handleUpdateProduct = (id) => {
       console.log(error);
     })
 }
+window.handleUpdateProduct = handleUpdateProduct;
+
 

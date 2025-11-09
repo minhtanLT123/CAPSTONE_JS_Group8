@@ -7,14 +7,14 @@ class ApiServices {
 
         return promise;
     }
-    deleteProductApid = (id) => {
+    deleteProductApi = (id) => {
         const promise = axios({
             url: `https://68f8f2a2deff18f212b82977.mockapi.io/VegeData/${id}`,
             method: "DELETE",
         });
         return promise;
     }
-    addProductApid = (product) => {
+    addProductApi = (product) => {
         const promise = axios({
             url: "https://68f8f2a2deff18f212b82977.mockapi.io/VegeData",
             method: "POST",

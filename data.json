@@ -6,7 +6,8 @@
         "image": "rau-den.webp",
         "rating": 3,
         "discount": 30,
-        "id": "1"
+        "id": "1",
+        "description": ""
     },
     {
         "name": "Rau muống 4KFarm",
@@ -15,7 +16,8 @@
         "image": "rau-muong.webp",
         "rating": 3,
         "discount": 30,
-        "id": "2"
+        "id": "2",
+        "description": ""
     },
     {
         "name": "Cải ngọt 4KFarm",
@@ -24,7 +26,8 @@
         "image": "cai-ngot.webp",
         "rating": 4,
         "discount": 30,
-        "id": "3"
+        "id": "3",
+        "description": ""
     },
     {
         "name": "Rau mồng tơi 4KFarm",
@@ -33,7 +36,8 @@
         "image": "rau-mong-toi.webp",
         "rating": 4,
         "discount": 30,
-        "id": "4"
+        "id": "4",
+        "description": ""
     },
     {
         "name": "Rau cải thìa 4KFarm",
@@ -42,7 +46,8 @@
         "image": "cai-thia.jpg",
         "rating": 4,
         "discount": 30,
-        "id": "5"
+        "id": "5",
+        "description": ""
     },
     {
         "name": "Bưởi da xanh trái 1.7kg trở lên",
@@ -51,7 +56,8 @@
         "image": "buoi-da-xanh.webp",
         "rating": 4,
         "discount": 30,
-        "id": "6"
+        "id": "6",
+        "description": ""
     },
     {
         "name": "Dưa lưới Huỳnh Long trái 1.4kg-1.6kg",
@@ -60,7 +66,8 @@
         "image": "dua-luoi.webp",
         "rating": 4,
         "discount": 30,
-        "id": "7"
+        "id": "7",
+        "description": ""
     },
     {
         "name": "Xoài Đài Loan trái 600g trở lên",
@@ -69,7 +76,8 @@
         "image": "xoai-dai-loan.webp",
         "rating": 5,
         "discount": 30,
-        "id": "8"
+        "id": "8",
+        "description": ""
     },
     {
         "name": "Chuối cau nải 800g trở lên ",
@@ -78,7 +86,8 @@
         "image": "chuoi.webp",
         "rating": 4,
         "discount": 30,
-        "id": "9"
+        "id": "9",
+        "description": ""
     },
     {
         "name": "Táo Gala mini nhập khẩu New Zealand 1kg (8-11 trái)",
@@ -87,7 +96,8 @@
         "image": "tao.webp",
         "rating": 4,
         "discount": 30,
-        "id": "10"
+        "id": "10",
+        "description": ""
     },
     {
         "name": "Cam sành vắt nước 3kg (18 - 24 trái)",
@@ -96,7 +106,8 @@
         "image": "cam-sanh.webp",
         "rating": 4,
         "discount": 30,
-        "id": "11"
+        "id": "11",
+        "description": ""
     },
     {
         "name": "Lạc cúc đỏ Lý Tưởng",
@@ -105,7 +116,8 @@
         "image": "lac-cuc-do-ly-tuong.webp",
         "rating": 3,
         "discount": 30,
-        "id": "12"
+        "id": "12",
+        "description": ""
     },
     {
         "name": "Nấm hương khô Việt San",
@@ -114,7 +126,8 @@
         "image": "nam-huong-kho-viet-san.webp",
         "rating": 4,
         "discount": 30,
-        "id": "13"
+        "id": "13",
+        "description": ""
     },
     {
         "name": "Đậu phộng Việt San",
@@ -123,7 +136,8 @@
         "image": "dau-phong-viet-san.webp",
         "rating": 4,
         "discount": 30,
-        "id": "14"
+        "id": "14",
+        "description": ""
     },
     {
         "name": "Bột mì đa dụng Meizan cao cấp gói 1kg",
@@ -132,7 +146,8 @@
         "image": "bot-mi-da-dung.webp",
         "rating": 3,
         "discount": 30,
-        "id": "15"
+        "id": "15",
+        "description": ""
     },
     {
         "name": "Bột bắp Tấn Sang gói 150g",
@@ -141,7 +156,8 @@
         "image": "bot-bap-tan-sang.webp",
         "rating": 3,
         "discount": 30,
-        "id": "16"
+        "id": "16",
+        "description": ""
     },
     {
         "name": "Rong biển nấu canh Ottogi gói 20g",
@@ -150,7 +166,8 @@
         "image": "rong-bien-nau-canh-ottogi.webp",
         "rating": 5,
         "discount": 30,
-        "id": "17"
+        "id": "17",
+        "description": ""
     },
     {
         "name": "Lốc 3 gói rong biển ăn liền Ock Dong Ja Shin",
@@ -159,7 +176,8 @@
         "image": "rong-bien-an-lien.webp",
         "rating": 5,
         "discount": 30,
-        "id": "18"
+        "id": "18",
+        "description": ""
     },
     {
         "name": "Xà lách thuỷ canh",
@@ -168,7 +186,8 @@
         "image": "xa-lach-bup-mo-thuy-canh.webp",
         "rating": 5,
         "discount": 30,
-        "id": "19"
+        "id": "19",
+        "description": ""
     },
     {
         "name": "Xà lách búp mỡ",
@@ -177,7 +196,8 @@
         "image": "xa-lach-bup-mo.webp",
         "rating": 5,
         "discount": 30,
-        "id": "20"
+        "id": "20",
+        "description": ""
     },
     {
         "name": "Xà lách xoong Đà Lạt",
@@ -186,7 +206,8 @@
         "image": "xa-lach-xoong-da-lat.webp",
         "rating": 5,
         "discount": 30,
-        "id": "21"
+        "id": "21",
+        "description": ""
     },
     {
         "name": "Xà lách lô lô xanh",
@@ -195,7 +216,8 @@
         "image": "xa-lach-xoong-da-lat.webp",
         "rating": 5,
         "discount": 30,
-        "id": "22"
+        "id": "22",
+        "description": ""
     },
     {
         "name": "6 hộp nước dừa xiêm xanh Cocoxim 1 lít",
@@ -204,7 +226,8 @@
         "image": "6-hop-nuoc-dua-xiem-xanh.webp",
         "rating": 5,
         "discount": 30,
-        "id": "23"
+        "id": "23",
+        "description": ""
     },
     {
         "name": "6 hộp nước ép trái vải Malee 1 lít",
@@ -213,7 +236,8 @@
         "image": "6-hop-nuoc-ep-trai-vai-malee.webp",
         "rating": 5,
         "discount": 30,
-        "id": "24"
+        "id": "24",
+        "description": ""
     },
     {
         "name": "6 chai nước cam có tép Teppy 327ml",
@@ -222,7 +246,8 @@
         "image": "loc-6-chai-nuoc-tao.webp",
         "rating": 5,
         "discount": 30,
-        "id": "25"
+        "id": "25",
+        "description": ""
     },
     {
         "name": "Lốc 6 chai nước táo tự nhiên TH True Juice 350ml",
@@ -231,6 +256,7 @@
         "image": "6-chai-nuoc-cam-co-tep-teppy.webp",
         "rating": 5,
         "discount": 30,
-        "id": "26"
+        "id": "26",
+        "description": ""
     }
 ]
