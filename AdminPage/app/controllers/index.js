@@ -104,6 +104,10 @@ window.handleDeleteProduct = handleDeleteProduct;
  */
 getEle("btnThemSP").onclick = () => {
   document.getElementsByClassName("modal-title")[0].innerHTML = "Add Product";
+
+  // Làm sạch toàn bộ form (xóa dữ liệu edit cũ)
+  resetForm();
+
   // create "Add Product" button
   const addProductBtn = `<button class="btn btn-primary" onclick = "handleAddProduct()">Add Product </button>`;
   document.getElementsByClassName("modal-footer")[0].innerHTML = addProductBtn;
