@@ -12,17 +12,33 @@ const resetForm = () => {
   getEle("form-id").reset();
 }
 
+let productList = [];
+
 const getListProduct = () => {
   const promise = api.getListProductApi();
-
   promise
     .then((result) => {
-      renderListProduct(result.data);
+      productList = result.data; // ⚡ Gán dữ liệu vào biến toàn cục
+      renderListProduct(productList);
     })
-    .catch((error) => {
-      console.log(error);
-    });
+    .catch((error) => console.log(error));
 };
+
+document.getElementById("searchInput").addEventListener("input", function () {
+  const keyword = this.value.trim().toLowerCase();
+  const selectedType = document.getElementById("filterType").value;
+
+  const filtered = productList.filter((product) => {
+    const matchType = selectedType === "" || product.type === selectedType;
+    const matchName = product.name.toLowerCase().includes(keyword);
+    return matchType && matchName;
+  });
+
+  renderListProduct(filtered);
+});
+
+
+
 
 getListProduct();
 
@@ -43,10 +59,19 @@ const renderListProduct = (data) => {
             </td>
             <td> ${product.description}</td>
            
-            <td> 
-              <button class = " btn btn-info " data-toggle="modal" data-target="#myModal" onclick = "handleEditProduct(${product.id})"> Edit </button> 
-              <button class = " btn btn-danger " onclick = "handleDeleteProduct(${product.id})"> Delete </button> 
-            <td/>
+            <td style="white-space: nowrap; text-align: center;">
+              <button class="btn btn-info btn-sm me-2"
+                data-toggle="modal"
+                data-target="#myModal"
+                onclick="handleEditProduct(${product.id})">
+                Edit
+              </button>
+              <button class="btn btn-danger btn-sm"
+                onclick="handleDeleteProduct(${product.id})">
+                Delete
+              </button>
+            </td>
+
            
         </tr>
     `;
@@ -91,7 +116,6 @@ getEle("btnThemSP").onclick = () => {
  */
 
 const handleAddProduct = () => {
-  resetForm();
   // Get data form user input
   const name = getEle("TenSP").value;
   const price = getEle("GiaSP").value;
@@ -179,5 +203,22 @@ const handleUpdateProduct = (id) => {
     })
 }
 window.handleUpdateProduct = handleUpdateProduct;
+
+// Lắng nghe sự kiện thay đổi loại sản phẩm
+document.getElementById("filterType").addEventListener("change", function () {
+  const selectedType = this.value; // lấy giá trị được chọn
+  const keyword = document.getElementById("searchInput").value.trim().toLowerCase(); // lấy từ khóa hiện có trong ô search
+
+  // Lọc danh sách
+  const filtered = productList.filter((product) => {
+    const matchType = selectedType === "" || product.type === selectedType;
+    const matchName = product.name.toLowerCase().includes(keyword);
+    return matchType && matchName;
+  });
+
+  renderListProduct(filtered);
+});
+
+
 
 

@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./../css/style.css">
 </head>
 
 <body>
@@ -61,14 +62,18 @@
           <div class="col-md-4">
             <!-- BEGIN TÌM KIẾM -->
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Nhập từ khóa" aria-label="Recipient's username"
-                aria-describedby="basic-addon2" />
+              <input type="text" id="searchInput" class="form-control" placeholder="Nhập tên sản phẩm..."
+                aria-label="Recipient's username" aria-describedby="basic-addon2" />
               <div class="input-group-append">
-                <span class="input-group-text" id="basic-addon2"><i class="fa fa-search"></i></span>
+                <span class="input-group-text" id="basic-addon2">
+                  <i class="fa fa-search"></i>
+                </span>
               </div>
             </div>
             <!-- END TÌM KIẾM -->
           </div>
+
+
         </div>
         <div class="clear-fix"></div>
         <div class="tblSanPham" id="tblSanPham">
@@ -77,7 +82,18 @@
             <thead>
               <th>STT</th>
               <th>Tên Sản Phẩm</th>
-              <th>Loại Sản Phẩm</th>
+              <th>Loại Sản Phẩm
+                <br />
+                <select id="filterType" class="form-select form-select-sm mt-1">
+                  <option value="">Tất cả</option>
+                  <option value="rau-cu">Rau củ</option>
+                  <option value="trai-cay">Trái cây</option>
+                  <option value="salad">Salad</option>
+                  <option value="nuoc-ep">Nước ép</option>
+                  <option value="do-kho">Đồ khô</option>
+                </select>
+
+              </th>
               <th>Giá</th>
               <th>Khuyến Mãi</th>
               <th>Hình Ảnh</th>
@@ -133,9 +149,11 @@
                 <input id="phantramKM" class="form-control" placeholder="Nhập Phần trăm khuyến mãi" />
               </div>
               <div class="form-group">
+
                 <label>Hình Ảnh</label>
                 <input type="text" id="HinhSP" class="form-control"
                   placeholder="Nhập tên file ảnh (vd: rau-den.webp)" />
+
               </div>
               <div class="form-group">
                 <label for="">Mô tả: </label>
@@ -157,7 +175,7 @@
   <style>
     #container {
       min-width: 310px;
-      max-width: 800px;
+      max-width: 1200px;
       height: 400px;
       margin: 0 auto;
     }
