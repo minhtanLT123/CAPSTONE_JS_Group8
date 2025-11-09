@@ -1,7 +1,7 @@
 class ApiServices {
     getListProductApi() {
         const promise = axios({
-            url: "https://68e90f1df2707e6128cd5d01.mockapi.io/apo/VegeData",
+            url: "https://68f8f2a2deff18f212b82977.mockapi.io/VegeData",
             method: "GET",
         });
 
@@ -9,14 +9,14 @@ class ApiServices {
     }
     deleteProductApid = (id) => {
         const promise = axios({
-            url: `https://68e90f1df2707e6128cd5d01.mockapi.io/apo/VegeData/${id}`,
+            url: `https://68f8f2a2deff18f212b82977.mockapi.io/VegeData/${id}`,
             method: "DELETE",
         });
         return promise;
     }
     addProductApid = (product) => {
         const promise = axios({
-            url: "https://68e90f1df2707e6128cd5d01.mockapi.io/apo/VegeData",
+            url: "https://68f8f2a2deff18f212b82977.mockapi.io/VegeData",
             method: "POST",
             data: product,
         });
@@ -25,14 +25,14 @@ class ApiServices {
     }
     getProductByIdApi = (id) => {
         const promise = axios({
-            url: `https://68e90f1df2707e6128cd5d01.mockapi.io/apo/VegeData/${id}`,
+            url: `https://68f8f2a2deff18f212b82977.mockapi.io/VegeData/${id}`,
             method: "GET",
         });
         return promise;
     }
     updateProductApi(product) {
         const promise = axios({
-            url: `https://68e90f1df2707e6128cd5d01.mockapi.io/apo/VegeData/${product.id}`,
+            url: `https://68f8f2a2deff18f212b82977.mockapi.io/VegeData/${product.id}`,
             method: "PUT",
             data: product,
         })

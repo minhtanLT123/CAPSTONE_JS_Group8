@@ -30,10 +30,11 @@ const renderListProduct = (data) => {
             <td>${i + 1}</td>
             <td>${product.name}</td>
             <td>${product.price}</td>
+            <td> ${product.discount}%</td>
             <td>
-                <img src="./../../assets/img/${product.image}" width="50" />
+                <img src="./../../assets/${product.type}/${product.image}" width="50" />
             </td>
-            <td>${product.description}</td>
+            <td> ${product.description}</td>
            
             <td> 
               <button class = " btn btn-info " data-toggle="modal" data-target="#myModal" onclick = " handleEditProduct(${product.id})"> Edit </button> 
@@ -86,12 +87,13 @@ const handleAddProduct = () => {
   // Get data form user input
   const name = getEle("TenSP").value;
   const price = getEle("GiaSP").value;
+  const discount = getEle("phantramKM").value;
   const image = getEle("HinhSP").value;
   const description = getEle("Mota").value;
   const rating = getEle("Rating").value;
 
   // create object product
-  const product = new Product("", name, price, description, image, rating);
+  const product = new Product("", name, price, discount, description, image, rating);
   console.log(product);
 
   // add product to server
@@ -127,6 +129,7 @@ const handleEditProduct = (id) => {
       // fill data
       getEle("TenSP").value = product.name;
       getEle("GiaSP").value = product.price;
+      getEle("phantramKM").value = product.discount;
       getEle("HinhSP").value = product.image;
       getEle("Mota").value = product.description;
       getEle("Rating").value = product.rating;
@@ -143,11 +146,12 @@ window.handleEditProduct = handleEditProduct;
 const handleUpdateProduct = (id) => {
   const name = getEle("TenSP").value;
   const price = getEle("GiaSP").value;
+  const discount = getEle("phantramKM").value;
   const image = getEle("HinhSP").value;
   const description = getEle("Mota").value;
   const rating = getEle("Rating").value;
 
-  const product = new Product(id, name, price, description, image, rating);
+  const product = new Product(id, name, price, discount, description, image, rating);
   const promise = api.updateProductApi(product);
   promise
     .then((result) => {

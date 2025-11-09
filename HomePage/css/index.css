@@ -341,7 +341,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 
 body {
@@ -421,6 +420,8 @@ body {
   margin-left: -0.75rem;
 }
 .header .container .header_content .header_top .shopping_cart {
+  position: relative;
+  z-index: 200;
   display: flex;
   justify-content: flex-end;
 }
@@ -470,6 +471,7 @@ body {
   margin: 0 0.5rem;
   color: #fff;
   cursor: pointer;
+  overflow: visible;
 }
 .header .container .header_content .header_top .shopping_cart .cart-icon i {
   font-size: 18px;
@@ -479,8 +481,8 @@ body {
   width: 60%;
   height: 60%;
   position: absolute;
-  top: -4px;
-  right: -4px;
+  top: -8px;
+  right: -8px;
   background-color: red;
   color: white;
   font-size: 12px;
@@ -492,6 +494,13 @@ body {
   min-width: 18px;
   justify-content: center;
   align-items: center;
+  z-index: 9999;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  padding: 0 4px;
 }
 .header .container .header_content .header_top .shopping_cart .cart-icon:hover {
   background-color: #76a713;
@@ -902,7 +911,6 @@ body {
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  overflow: hidden;
 }
 
 a.active {

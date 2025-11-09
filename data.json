@@ -1,0 +1,236 @@
+[
+    {
+        "name": "Rau dền 4KFarm 500gr",
+        "price": 10000,
+        "type": "rau-cu",
+        "image": "rau-den.webp",
+        "rating": 3,
+        "discount": 30,
+        "id": "1"
+    },
+    {
+        "name": "Rau muống 4KFarm",
+        "price": 10000,
+        "type": "rau-cu",
+        "image": "rau-muong.webp",
+        "rating": 3,
+        "discount": 30,
+        "id": "2"
+    },
+    {
+        "name": "Cải ngọt 4KFarm",
+        "price": 10000,
+        "type": "rau-cu",
+        "image": "cai-ngot.webp",
+        "rating": 4,
+        "discount": 30,
+        "id": "3"
+    },
+    {
+        "name": "Rau mồng tơi 4KFarm",
+        "price": 9000,
+        "type": "rau-cu",
+        "image": "rau-mong-toi.webp",
+        "rating": 4,
+        "discount": 30,
+        "id": "4"
+    },
+    {
+        "name": "Rau cải thìa 4KFarm",
+        "price": 10000,
+        "type": "rau-cu",
+        "image": "cai-thia.jpg",
+        "rating": 4,
+        "discount": 30,
+        "id": "5"
+    },
+    {
+        "name": "Bưởi da xanh trái 1.7kg trở lên",
+        "price": 80000,
+        "type": "trai-cay",
+        "image": "buoi-da-xanh.webp",
+        "rating": 4,
+        "discount": 30,
+        "id": "6"
+    },
+    {
+        "name": "Dưa lưới Huỳnh Long trái 1.4kg-1.6kg",
+        "price": 115000,
+        "type": "trai-cay",
+        "image": "dua-luoi.webp",
+        "rating": 4,
+        "discount": 30,
+        "id": "7"
+    },
+    {
+        "name": "Xoài Đài Loan trái 600g trở lên",
+        "price": 9000,
+        "type": "trai-cay",
+        "image": "xoai-dai-loan.webp",
+        "rating": 5,
+        "discount": 30,
+        "id": "8"
+    },
+    {
+        "name": "Chuối cau nải 800g trở lên ",
+        "price": 25000,
+        "type": "trai-cay",
+        "image": "chuoi.webp",
+        "rating": 4,
+        "discount": 30,
+        "id": "9"
+    },
+    {
+        "name": "Táo Gala mini nhập khẩu New Zealand 1kg (8-11 trái)",
+        "price": 39000,
+        "type": "trai-cay",
+        "image": "tao.webp",
+        "rating": 4,
+        "discount": 30,
+        "id": "10"
+    },
+    {
+        "name": "Cam sành vắt nước 3kg (18 - 24 trái)",
+        "price": 39000,
+        "type": "trai-cay",
+        "image": "cam-sanh.webp",
+        "rating": 4,
+        "discount": 30,
+        "id": "11"
+    },
+    {
+        "name": "Lạc cúc đỏ Lý Tưởng",
+        "price": 52000,
+        "type": "do-kho",
+        "image": "lac-cuc-do-ly-tuong.webp",
+        "rating": 3,
+        "discount": 30,
+        "id": "12"
+    },
+    {
+        "name": "Nấm hương khô Việt San",
+        "price": 49000,
+        "type": "do-kho",
+        "image": "nam-huong-kho-viet-san.webp",
+        "rating": 4,
+        "discount": 30,
+        "id": "13"
+    },
+    {
+        "name": "Đậu phộng Việt San",
+        "price": 42000,
+        "type": "do-kho",
+        "image": "dau-phong-viet-san.webp",
+        "rating": 4,
+        "discount": 30,
+        "id": "14"
+    },
+    {
+        "name": "Bột mì đa dụng Meizan cao cấp gói 1kg",
+        "price": 20800,
+        "type": "do-kho",
+        "image": "bot-mi-da-dung.webp",
+        "rating": 3,
+        "discount": 30,
+        "id": "15"
+    },
+    {
+        "name": "Bột bắp Tấn Sang gói 150g",
+        "price": 5500,
+        "type": "do-kho",
+        "image": "bot-bap-tan-sang.webp",
+        "rating": 3,
+        "discount": 30,
+        "id": "16"
+    },
+    {
+        "name": "Rong biển nấu canh Ottogi gói 20g",
+        "price": 21000,
+        "type": "do-kho",
+        "image": "rong-bien-nau-canh-ottogi.webp",
+        "rating": 5,
+        "discount": 30,
+        "id": "17"
+    },
+    {
+        "name": "Lốc 3 gói rong biển ăn liền Ock Dong Ja Shin",
+        "price": 16500,
+        "type": "do-kho",
+        "image": "rong-bien-an-lien.webp",
+        "rating": 5,
+        "discount": 30,
+        "id": "18"
+    },
+    {
+        "name": "Xà lách thuỷ canh",
+        "price": 8000,
+        "type": "salad",
+        "image": "xa-lach-bup-mo-thuy-canh.webp",
+        "rating": 5,
+        "discount": 30,
+        "id": "19"
+    },
+    {
+        "name": "Xà lách búp mỡ",
+        "price": 16000,
+        "type": "salad",
+        "image": "xa-lach-bup-mo.webp",
+        "rating": 5,
+        "discount": 30,
+        "id": "20"
+    },
+    {
+        "name": "Xà lách xoong Đà Lạt",
+        "price": 4500,
+        "type": "salad",
+        "image": "xa-lach-xoong-da-lat.webp",
+        "rating": 5,
+        "discount": 30,
+        "id": "21"
+    },
+    {
+        "name": "Xà lách lô lô xanh",
+        "price": 20000,
+        "type": "salad",
+        "image": "xa-lach-xoong-da-lat.webp",
+        "rating": 5,
+        "discount": 30,
+        "id": "22"
+    },
+    {
+        "name": "6 hộp nước dừa xiêm xanh Cocoxim 1 lít",
+        "price": 229000,
+        "type": "nuoc-ep",
+        "image": "6-hop-nuoc-dua-xiem-xanh.webp",
+        "rating": 5,
+        "discount": 30,
+        "id": "23"
+    },
+    {
+        "name": "6 hộp nước ép trái vải Malee 1 lít",
+        "price": 357000,
+        "type": "nuoc-ep",
+        "image": "6-hop-nuoc-ep-trai-vai-malee.webp",
+        "rating": 5,
+        "discount": 30,
+        "id": "24"
+    },
+    {
+        "name": "6 chai nước cam có tép Teppy 327ml",
+        "price": 54000,
+        "type": "nuoc-ep",
+        "image": "loc-6-chai-nuoc-tao.webp",
+        "rating": 5,
+        "discount": 30,
+        "id": "25"
+    },
+    {
+        "name": "Lốc 6 chai nước táo tự nhiên TH True Juice 350ml",
+        "price": 112000,
+        "type": "nuoc-ep",
+        "image": "6-chai-nuoc-cam-co-tep-teppy.webp",
+        "rating": 5,
+        "discount": 30,
+        "id": "26"
+    }
+]
