@@ -8,12 +8,7 @@ class Product {
         this.image = _image;
         this.description = _description;
         this.rating = _rating;
-
-
     }
-
-
-
 };
 
 export default Product;

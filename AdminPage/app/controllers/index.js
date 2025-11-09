@@ -8,9 +8,9 @@ const getEle = (id) => {
 }
 
 // clear form
-// const resetForm = () => {
-//   getEle("form-id").reset();
-// }
+const resetForm = () => {
+  getEle("form-id").reset();
+}
 
 const getListProduct = () => {
   const promise = api.getListProductApi();
@@ -91,14 +91,13 @@ getEle("btnThemSP").onclick = () => {
  */
 
 const handleAddProduct = () => {
-
+  resetForm();
   // Get data form user input
   const name = getEle("TenSP").value;
   const price = getEle("GiaSP").value;
   const type = getEle("LoaiSP").value;
   const discount = getEle("phantramKM").value;
   const image = getEle("HinhSP").value;
-  // const image = getEle("HinhSP").files[0]?.name || "";
   const description = getEle("Mota").value;
   const rating = getEle("Rating").value;
 
@@ -145,6 +144,7 @@ const handleEditProduct = (id) => {
       getEle("HinhSP").value = product.image;
       getEle("Mota").value = product.description;
       getEle("Rating").value = product.rating;
+      getEle("LoaiSP").value = product.type;
     })
     .catch((error) => {
       console.log(error);
@@ -158,12 +158,13 @@ window.handleEditProduct = handleEditProduct;
 const handleUpdateProduct = (id) => {
   const name = getEle("TenSP").value;
   const price = getEle("GiaSP").value;
+  const type = getEle("LoaiSP").value;
   const discount = getEle("phantramKM").value;
   const image = getEle("HinhSP").value;
   const description = getEle("Mota").value;
   const rating = getEle("Rating").value;
 
-  const product = new Product(id, name, price, discount, description, image, rating);
+  const product = new Product(id, name, type, price, discount, image, description, rating);
   const promise = api.updateProductApi(product);
   promise
     .then((result) => {
