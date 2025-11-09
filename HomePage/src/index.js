@@ -29,13 +29,13 @@ getListProducts();
 // Hàm lọc theo type
 function findTypeItem(type) {
   // Nếu click lại cùng loại thì hiển thị toàn bộ
-  if (currentType === type || !type) {
+  if (currentType === type || !type || type === "khac") {
     currentType = null;
     renderProducts(allProducts);
     return;
   }
   currentType = type;
-  const filtered = productList.filter((item) => item.type === type);
+  const filtered = allProducts.filter((item) => item.type === type);
   renderProducts(filtered);
 }
 window.findTypeItem = findTypeItem;
@@ -187,8 +187,7 @@ window.updateQuantity = updateQuantity;
 
 // Hàm render danh sách sản phẩm
 const renderProducts = (data) => {
-  window.productList = data; // 👈 Thêm dòng này
-  const container = document.querySelector(".product-list");
+  window.productList = data;
   if (!data.length) {
     container.innerHTML = `<p>Không có sản phẩm phù hợp.</p>`;
     return;
